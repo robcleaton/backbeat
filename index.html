@@ -20,7 +20,15 @@ navigation:
   <div class="content">
     <div class="hero-block">
       <div class="container-lg">
-        <h1>h1. Bootstrap heading</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          </ol>
+        </nav>
+
+        <h1 class="test">h1. Bootstrap heading</h1>
         <p class="lead">
           This is a lead paragraph. It stands out from regular paragraphs.
         </p>
@@ -34,7 +42,9 @@ navigation:
       <h4>h4. Bootstrap heading</h4>
       <h5>h5. Bootstrap heading</h5>
       <h6>h6. Bootstrap heading</h6>
+      <a href="">Leave feedback</a>
     </div>
+
 
     {% include footer.html %}
   </div>
