@@ -26,12 +26,17 @@ header {
     background-color: black !important;
     padding-left: 12px;
     z-index: 100;
+
+    .container-fluid {
+      justify-content: left;
+      flex-direction: row-reverse;
+    };
   }
   .navbar-brand {
     color: white !important;
   }
 }
-.menu {
+.menu-desktop {
   background-color: pink;
   width: 20%;
   max-width: 320px;
@@ -53,9 +58,7 @@ header {
 .navbar-toggler {
   display: none;
 }
-.offcanvas.offcanvas-end {
-  left: 0;
-}
+
 .flex-container {
   display: flex;
   flex-wrap: nowrap;

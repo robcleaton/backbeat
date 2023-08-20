@@ -3,7 +3,8 @@
   body {
     background: pink;
   }
-  .menu {
+
+  .menu-desktop {
     display: none;
   }
   .flex-container {
@@ -12,6 +13,7 @@
   .navbar-toggler {
     display: block;
     background-color: aquamarine;
+    float: left;
   }
 }
 
