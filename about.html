@@ -1,91 +1,45 @@
 ---
-navigation:
-- text: Home
-  url: /index.html
-- text: About
-  url: /about.html
-  active: about
-- text: Project
-  url: /project.html
+layout: default
+title: About
 ---
 
-{% include header.html %}
 
-<body>
+<div class="hero-block">
+  <div class="container-lg">
 
-<style>
-  li.active a {
-      color: lightgray;
-      cursor: default;
-    }
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
 
-
-    header .navbar {
-      padding-left: 12px;
-      position: fixed;
-      width: 100%;
-    }
-    .wrapper {
-      padding-top: 56px;
-    }
-    .left-menu {
-      background: aliceblue;
-      width: 250px;
-      height: calc(100vh - 56px);
-      float: left;
-      border-right: 1px solid grey;
-    }
-    .content {
-      float: left;
-      padding: 20px;
-    }
-
-
-
-    html, body {
-      height: 100%;
-      overflow: hidden;
-    }
-    .wrapper {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      overflow: auto;
-    }
-</style>
-
-  <div class="container-fluid wrapper">
-    <div class="left-menu">
-      {% include menu.html %}
-    </div>
-
-    <div class="content">
-
-      {{ page.url }}
-
-
-      {% assign url = page.url|remove:'index.html' %}
-        {% for link in page.navigation %}
-        <li {% if url == link.url %}class="active"{% endif %}>
-            <a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
-        </li>
-      {% endfor %}
-
-
-      <h1>h1. Bootstrap heading</h1>
-      <h2>h2. Bootstrap heading</h2>
-      <h3>h3. Bootstrap heading</h3>
-      <h4>h4. Bootstrap heading</h4>
-      <h5>h5. Bootstrap heading</h5>
-      <h6>h6. Bootstrap heading</h6>
-    </div>
   </div>
+</div>
 
+<div class="container-lg">
+  <h1>h1. Bootstrap heading</h1>
+  <h2>h2. Bootstrap heading</h2>
+  <h3>h3. Bootstrap heading</h3>
+  <h4>h4. Bootstrap heading</h4>
+  <h5>h5. Bootstrap heading</h5>
+  <h6>h6. Bootstrap heading</h6>
+  <a href="">Leave feedback</a>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <ul class="nav nav-underline">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
 
-</body>
-
-</html>
+</div>

@@ -38,29 +38,28 @@ header {
 }
 
 .menu {
-  .accordion-body ul {
+  ul {
     list-style: none;
     padding: 0px;
   }
+}
+.menu-desktop {
+  background-color: pink;
+  width: 20%;
+  max-width: 320px;
+  min-width: 200px;
 
-  .menu-desktop {
-    background-color: pink;
+  .nav {
+    background: #ececec;
     width: 20%;
     max-width: 320px;
     min-width: 200px;
-
-    .nav {
-      background: #ececec;
-      width: 20%;
-      max-width: 320px;
-      min-width: 200px;
-      height: 100vh;
-      overflow-y: auto;
-      position: fixed;
-      padding: 12px 0px;
-      margin-top: 56px;
-      padding-bottom: 100px;
-    }
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    padding: 12px 0px;
+    margin-top: 56px;
+    padding-bottom: 100px;
   }
 }
 .navbar-toggler {
