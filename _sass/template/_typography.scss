@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: 'Beni';
+  src: url(assets/fonts/BeniBlack.ttf);
+}
+
+.navbar-brand {
+  font-family: 'Beni';
+  font-weight: inherit !important;
+  font-size: 2.4rem;
+  line-height: 1.9rem;
+}
+.display-1 {
+}
+.display-2 {
+}
+.display-3 {
+}
+.display-4 {
+}
+.display-5 {
+}
+.display-6 {
+}
+
+h1 {
+  font-family: 'Beni';
+  font-weight: inherit !important;
+}
+h2 {
+}
+
+a, .nav-link {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--semantic-neutral-0);
+}

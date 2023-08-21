@@ -1,0 +1,36 @@
+.flex-container, .content {
+  display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 20%;
+  padding-top: 56px;
+  margin-left: clamp(200px, 20%, 320px);
+}
+.hero-block {
+  background: var(--primary);
+  padding: 10vh 0px;
+  margin-bottom: 2vh;
+}
+.content {
+  width: 100%;
+}
+.content {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        left:0px; margin-top:3vh;
+    }
+    100% {
+        opacity: 1;
+        left:0px; margin-top:0px;
+     }
+}
