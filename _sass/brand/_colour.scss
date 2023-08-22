@@ -1,0 +1,36 @@
+
+:root {
+
+  // Primary
+  --primary-accent: var(--primary-50);
+  --primary-0: #9EEBFF;
+  --primary-10: #91D1F2;
+  --primary-20: #84B7E5;
+  --primary-30: #779DD8;
+  --primary-40: #6A83CB;
+  --primary-50: #5D69BE;
+  --primary-60: #504FB1;
+  --primary-70: #4335A4;
+  --primary-80: #361B97;
+  --primary-90: #2B008C;
+
+
+  // Secondary
+  --secondary: black;
+
+  // Tertiary
+  --tertiary: pink;
+
+  // Greyscale
+  --semantic-neutral-0: #fff;
+  --semantic-neutral-50: #fff;
+  --semantic-neutral-100: #fff;
+  --semantic-neutral-200: #fff;
+  --semantic-neutral-300: #fff;
+  --semantic-neutral-400: #fff;
+  --semantic-neutral-500: #fff;
+  --semantic-neutral-600: #fff;
+  --semantic-neutral-700: #fff;
+  --semantic-neutral-800: #fff;
+  --semantic-neutral-900: #000;
+}
