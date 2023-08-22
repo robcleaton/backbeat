@@ -14,7 +14,6 @@
   --primary-80: #361B97;
   --primary-90: #2B008C;
 
-
   // Secondary
   --secondary: black;
 
@@ -33,4 +32,11 @@
   --semantic-neutral-700: #fff;
   --semantic-neutral-800: #fff;
   --semantic-neutral-900: #000;
+
+  // Interaction
+  --interaction-default: yellow;
+  --interaction-hover: yellow;
+  --interaction-active: yellow;
+  --interaction-disabled: yellow;
+
 }
