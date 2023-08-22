@@ -1,29 +1,16 @@
 
+
+@import
+        "structure/header",
+        "structure/footer"
+;
+
 html, body {
   height: 100%;
 }
 
 
-// header
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
 
-  .navbar {
-    background-color: black !important;
-    padding-left: 12px;
-    z-index: 100;
-
-    .container-fluid {
-      justify-content: left;
-      flex-direction: row-reverse;
-    };
-  }
-  .navbar-brand {
-    color: white !important;
-  }
-}
 
 
 // Content
@@ -91,15 +78,4 @@ header {
 }
 .navbar-toggler {
   display: none;
-}
-
-
-
-// footer
-footer {
-  background: var(--secondary);
-  color: white;
-  margin-top: 100px;
-  padding: 50px 0px;
-  flex: 1 1 auto;
 }
