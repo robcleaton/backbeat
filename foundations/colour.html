@@ -1,16 +1,115 @@
 ---
-layout: default
+layout: full-content
 permalink: /colour
 title: Colour
 excerpt: Blurb
 ---
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
-  </ol>
-</nav>
+<style>
+  .colour-block {
+    background: red;
+    padding: 100px:
+  }
+  .colour-content {
+    margin: 24vh 80px 12vh;
+  }
+    ul.colour-shades {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      display: inline-flex;
+      width: 100%;
+    }
+      ul.colour-shades li {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 4% 2%;
+      }
+      ul.colour-shades .colour-name {
+        font-weight: bold;
+      }
+      ul.colour-shades .colour-value {
+        font-size: 1rem;
+      }
+    .colour-shade-1 {
+      background: pink;
+    }
+    .colour-shade-2 {
+      background: green;
+    }
+    .colour-shade-3 {
+      background: yellow;
+    }
+    .colour-shade-4 {
+      background: yellow;
+    }
+    .colour-shade-5 {
+      background: skyblue;
+    }
+    .colour-shade-6 {
+      background: deepskyblue;
+    }
+    .colour-shade-7 {
+      background: cornflowerblue;
+    }
 
-<p>This page uses Boilerplate and Jekyll</p>
+</style>
+
+
+<div class="">
+  <div class="container-lg">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+</div>
+</div>
+
+
+
+  <div class="colour-block">
+    <div class="colour-content">
+      <h1 class="display-2">Red</h1>
+      <h1 class="display-6">Display 6</h1>
+      <p class="lead">
+        This is a lead paragraph. It stands out from regular paragraphs.
+      </p>
+    </div>
+
+    <ul class="colour-shades">
+      <li class="colour-shade-1">1.Pink</li>
+      <li class="colour-shade-2">2.Green</li>
+      <li class="colour-shade-3">3.Yellow</li>
+      <li class="colour-shade-4">4.Purple</li>
+      <li class="colour-shade-5">5.Blue</li>
+      <li class="colour-shade-6">6.Red</li>
+      <li class="colour-shade-7">7.Other</li>
+    </ul>
+  </div>
+
+
+
+  <div class="colour-block">
+    <div class="colour-content">
+      <h1 class="display-2">Brand name colour</h1>
+      <h1 class="display-6">#12345</h1>
+      <p class="lead">
+        This is a lead paragraph. It stands out from regular paragraphs.
+      </p>
+    </div>
+
+    <ul class="colour-shades">
+      <li class="colour-shade-1"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-2"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-3"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-4"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-5"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-6"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+      <li class="colour-shade-7"><span class="colour-name">Pink</span><span class="colour-value">#ffffff</span></li>
+    </ul>
+  </div>
