@@ -1,5 +1,8 @@
 .colour-content {
-  margin: 28vh 80px 12vh;
+  // margin: 28vh 80px 12vh;
+  margin: 28vh;
+  margin-left: clamp(0px, 12vw, 800px);
+  margin-right: clamp(0px, 12vw, 800px);
 }
 ul.colour-shades {
   list-style: none;
@@ -25,16 +28,16 @@ ul.colour-shades {
 .colour-block.pallete {
   background: var(--primary-accent);
   .colour-shade-1 {
-    background: var(--primary-0);
+    background: var(--primary-accent);
   }
   .colour-shade-2 {
-    background: var(--primary-10);
+    background: var(--secondary-accent);
   }
   .colour-shade-3 {
-    background: var(--primary-20);
+    background: var(--tertiary-accent);
   }
   .colour-shade-4 {
-    background: var(--primary-30);
+    background: var(--semantic-neutral-accent);
   }
 }
 .colour-block.primary {
@@ -64,80 +67,80 @@ ul.colour-shades {
     background: var(--primary-70);
   }
   .colour-shade-9 {
-    background: var(--primary-90);
+    background: var(--primary-80);
   }
   .colour-shade-10 {
-    background: var(--primary-100);
+    background: var(--primary-90);
   }
 }
 .colour-block.secondary {
   background: var(--secondary-accent);
   .colour-shade-1 {
-    background: var(--primary-0);
+    background: var(--secondary-0);
   }
   .colour-shade-2 {
-    background: var(--primary-10);
+    background: var(--secondary-10);
   }
   .colour-shade-3 {
-    background: var(--primary-20);
+    background: var(--secondary-20);
   }
   .colour-shade-4 {
-    background: var(--primary-30);
+    background: var(--secondary-30);
   }
   .colour-shade-5 {
-    background: var(--primary-40);
+    background: var(--secondary-40);
   }
   .colour-shade-6 {
-    background: var(--primary-50);
+    background: var(--secondary-50);
   }
   .colour-shade-7 {
-    background: var(--primary-60);
+    background: var(--secondary-60);
   }
   .colour-shade-8 {
-    background: var(--primary-70);
+    background: var(--secondary-70);
   }
   .colour-shade-9 {
-    background: var(--primary-90);
+    background: var(--secondary-80);
   }
   .colour-shade-10 {
-    background: var(--primary-100);
+    background: var(--secondary-90);
   }
 }
 .colour-block.tertiary {
   background: var(--tertiary-accent);
   .colour-shade-1 {
-    background: var(--primary-0);
+    background: var(--tertiary-0);
   }
   .colour-shade-2 {
-    background: var(--primary-10);
+    background: var(--tertiary-10);
   }
   .colour-shade-3 {
-    background: var(--primary-20);
+    background: var(--tertiary-20);
   }
   .colour-shade-4 {
-    background: var(--primary-30);
+    background: var(--tertiary-30);
   }
   .colour-shade-5 {
-    background: var(--primary-40);
+    background: var(--tertiary-40);
   }
   .colour-shade-6 {
-    background: var(--primary-50);
+    background: var(--tertiary-50);
   }
   .colour-shade-7 {
-    background: var(--primary-60);
+    background: var(--tertiary-60);
   }
   .colour-shade-8 {
-    background: var(--primary-70);
+    background: var(--tertiary-70);
   }
   .colour-shade-9 {
-    background: var(--primary-90);
+    background: var(--tertiary-80);
   }
   .colour-shade-10 {
-    background: var(--primary-100);
+    background: var(--tertiary-90);
   }
 }
 .colour-block.neutral {
-  background: var(--neutral-accent);
+  background: var(--semantic-neutral-accent);
   .colour-shade-1 {
     background: var(--semantic-neutral-0);
   }
@@ -163,9 +166,9 @@ ul.colour-shades {
     background: var(--semantic-neutral-70);
   }
   .colour-shade-9 {
-    background: var(--semantic-neutral-90);
+    background: var(--semantic-neutral-80);
   }
   .colour-shade-10 {
-    background: var(--semantic-neutral-100);
+    background: var(--semantic-neutral-90);
   }
 }

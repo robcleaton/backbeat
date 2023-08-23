@@ -15,13 +15,33 @@
   --primary-90: #2B008C;
 
   // Secondary
-  --secondary: black;
+  --secondary-accent: var(--secondary-30);
+  --secondary-0: #FF7C00;
+  --secondary-10: #EC6E13;
+  --secondary-20: #D96026;
+  --secondary-30: #C65239;
+  --secondary-40: #B3444C;
+  --secondary-50: #A0365F;
+  --secondary-60: #8D2872;
+  --secondary-70: #7A1A85;
+  --secondary-80: #670C98;
+  --secondary-90: #5000A8;
 
   // Tertiary
-  --tertiary: pink;
+  --tertiary-accent: var(--tertiary-90);
+  --tertiary-0: #EED2DF;
+  --tertiary-10: #ECC9D8;
+  --tertiary-20: #EAC0D1;
+  --tertiary-30: #E8B7CA;
+  --tertiary-40: #E6AEC3;
+  --tertiary-50: #E4A5BC;
+  --tertiary-60: #E29CB5;
+  --tertiary-70: #E093AE;
+  --tertiary-80: #DE8AA7;
+  --tertiary-90: #DF859E;
 
   // Greyscale
-  --semantic-neutral-accent: var(--primary-50);
+  --semantic-neutral-accent: var(--semantic-neutral-50);
   --semantic-neutral-0: #fff;
   --semantic-neutral-50: #E8E8E8;
   --semantic-neutral-10: #D1D1D1;
