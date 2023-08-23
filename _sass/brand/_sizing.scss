@@ -1,0 +1,101 @@
+
+// Sizing
+
+.sizing {
+  background: var(--tertiary-accent);
+  display: block;
+}
+.sizing-2 {
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+}
+.sizing-4 {
+  height: var(--spacing-4);
+  width: var(--spacing-4);
+}
+.sizing-8 {
+  height: var(--spacing-8);
+  width: var(--spacing-8);
+}
+.sizing-12 {
+  height: var(--spacing-12);
+  width: var(--spacing-12);
+}
+.sizing-16 {
+  height: var(--spacing-16);
+  width: var(--spacing-16);
+}
+.sizing-20 {
+  height: var(--spacing-20);
+  width: var(--spacing-20);
+}
+.sizing-24 {
+  height: var(--spacing-24);
+  width: var(--spacing-24);
+}
+.sizing-28 {
+  height: var(--spacing-28);
+  width: var(--spacing-28);
+}
+.sizing-32 {
+  height: var(--spacing-32);
+  width: var(--spacing-32);
+}
+.sizing-36 {
+  height: var(--spacing-36);
+  width: var(--spacing-36);
+}
+.sizing-40 {
+  height: var(--spacing-40);
+  width: var(--spacing-40);
+}
+.sizing-44 {
+  height: var(--spacing-44);
+  width: var(--spacing-44);
+}
+.sizing-48 {
+  height: var(--spacing-48);
+  width: var(--spacing-48);
+}
+.sizing-68 {
+  height: var(--spacing-68);
+  width: var(--spacing-68);
+}
+.sizing-80 {
+  height: var(--spacing-80);
+  width: var(--spacing-80);
+}
+.sizing-96 {
+  height: var(--spacing-96);
+  width: var(--spacing-96);
+}
+.sizing-140 {
+  height: var(--spacing-140);
+  width: var(--spacing-140);
+}
+.sizing-180 {
+  height: var(--spacing-180);
+  width: var(--spacing-180);
+}
+
+:root {
+  --spacing-unit: 16px;
+  --spacing-2: calc(0.125 * var(--spacing-unit));
+  --spacing-4: calc(0.25 * var(--spacing-unit));
+  --spacing-8: calc(0.5 * var(--spacing-unit));
+  --spacing-12: calc(0.75 * var(--spacing-unit));
+  --spacing-16: calc(1 * var(--spacing-unit));
+  --spacing-20: calc(1.25 * var(--spacing-unit));
+  --spacing-24: calc(1.5 * var(--spacing-unit));
+  --spacing-28: calc(1.75 * var(--spacing-unit));
+  --spacing-32: calc(2 * var(--spacing-unit));
+  --spacing-36: calc(2.25 * var(--spacing-unit));
+  --spacing-40: calc(2.5 * var(--spacing-unit));
+  --spacing-44: calc(2.75 * var(--spacing-unit));
+  --spacing-48: calc(3 * var(--spacing-unit));
+  --spacing-68: calc(4.25 * var(--spacing-unit));
+  --spacing-80: calc(5 * var(--spacing-unit));
+  --spacing-96: calc(6 * var(--spacing-unit));
+  --spacing-140: calc(8.75 * var(--spacing-unit));
+  --spacing-180: calc(11.25 * var(--spacing-unit));
+}
