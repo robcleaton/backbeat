@@ -33,14 +33,3 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
-
-navigation:
-- text: Home
-  url: /index.html
-- text: About
-  url: /about.html
-- text: Project
-  url: /project.html
-  active: Work
-- text: Work
-  url: /work.html
