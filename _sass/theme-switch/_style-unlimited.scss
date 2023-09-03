@@ -69,9 +69,6 @@
 /* Styling */
 html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
   background-color: lightcoral;
 }
 
@@ -83,18 +80,6 @@ body {
   transition: color .2s, background-color .2s;
 }
 
-#content {
-  margin: auto;
-  max-width: 60ch;
-  padding: 2ch;
-}
-
 a {
   color: var(--theme-color);
-}
-
-footer {
-  padding: 20px 0;
-  margin: 50px 0;
-  border-top: 1px solid var(--text-color);
 }

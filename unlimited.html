@@ -1,26 +1,11 @@
 ---
+layout: theme-switch
 permalink: /unlimited
 title: Unlimited
 excerpt: Blurb
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Only Theme Switcher by Alexander Sandberg</title>
-  <link rel="stylesheet" href="style-unlimited.css">
-</head>
-<body>
-  <input type="radio" class="theme-switch" name="theme-switch" id="theme-switch1">
-  <label for="theme-switch1" class="switch-label">Light</label>
-  <input type="radio" class="theme-switch" name="theme-switch" id="theme-switch2">
-  <label for="theme-switch2" class="switch-label">Dark</label>
-  <input type="radio" class="theme-switch" name="theme-switch" id="theme-switch3">
-  <label for="theme-switch3" class="switch-label">Tomato</label>
-  <div id="page">
-    <div id="content">
+
       <main>
         <h1>CSS Only Theme Switcher</h1>
         <p>This is a website theme switcher made using CSS only. This is the radio button–version, allowing you to use more than two themes! Here I use three, but you can create <em>as many as you'd like</em>.</p>
@@ -37,10 +22,3 @@ excerpt: Blurb
 }</code></pre>
         <p>This, however, means that we won't be able to use theme-specific styling for our switch labels, since they have to be placed <em>outside of our themed container</em> (<code>#page</code>). You will still have access to the default theme's colors though, since these are declared on <code>:root</code>.</p>
       </main>
-      <footer>
-        <small>A tiny project by <a href="https://github.com/alexandersandberg">Alexander Sandberg</a> 🐨 / <a href="https://github.com/alexandersandberg/theme-switcher">GitHub repo</a></small>
-      </footer>
-    </div>
-  </div>
-</body>
-</html>
