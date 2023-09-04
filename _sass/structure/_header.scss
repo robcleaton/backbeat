@@ -8,7 +8,10 @@ header {
     z-index: 100;
 
     .container-fluid {
-      justify-content: left;
+      flex-direction: row;
+    }
+    .brand-title {
+      display: flex;
       flex-direction: row;
     }
   }

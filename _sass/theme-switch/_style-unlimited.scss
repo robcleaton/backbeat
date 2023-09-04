@@ -14,6 +14,16 @@
   --third-bg: #f7f7f7;
   --third-theme: tomato;
 
+  /* 4 mode */
+  --fourth-text: green;
+  --fourth-bg: #f7f7f7;
+  --fourth-theme: green;
+
+  /* 5 mode */
+  --fifth-text: pink;
+  --fifth-bg: #f7f7f7;
+  --fifth-theme: pink;
+
   /* Default mode */
   --switch-shadow-color: var(--light-switch-shadow);
   --switch-icon: var(--light-switch-icon);
@@ -35,6 +45,20 @@
   --text-color: var(--third-text);
   --bg-color: var(--third-bg);
   --theme-color: var(--third-theme);
+}
+
+/* 4 mode */
+#theme-switch4:checked ~ #page {
+  --text-color: var(--fourth-text);
+  --bg-color: var(--fourth-bg);
+  --theme-color: var(--fourth-theme);
+}
+
+/* 5 mode */
+#theme-switch5:checked ~ #page {
+  --text-color: var(--fifth-theme);
+  --bg-color: var(--fifth-theme);
+  --theme-color: var(--fifth-theme);
 }
 
 /* Theme switcher */

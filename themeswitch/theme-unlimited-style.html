@@ -1,0 +1,26 @@
+---
+layout: theme-unlimited-style
+permalink: /theme-unlimited-style
+title: Theme Unlimited Style
+excerpt: Blurb
+---
+
+
+      <main>
+        <a href="theme">Theme switch</a>
+
+        <h1>CSS Only Theme Switcher</h1>
+        <p>This is a website theme switcher made using CSS only. This is the radio button–version, allowing you to use more than two themes! Here I use three, but you can create <em>as many as you'd like</em>.</p>
+        <p>> <a href="index.html">Two theme-version</a></p>
+        <p>This version doesn't use any JavaScript to store your theme preference. When you reload the page, you'll always get the default theme.</p>
+        <h2>Limitations using this method</h2>
+        <p>Despite being dubbed the <em>"unlimited"</em> version, using multiple radio buttons instead of a single checkbox has its limitations.</p>
+        <p>For accessibility reasons—when styling the focused state—each switch label must be <em>adjacent to its radio button</em>:</p>
+        <pre><code>&lt;input type="radio" name="theme-switch" id="theme-switch1"&gt;
+&lt;label for="theme-switch1"&gt;Light&lt;/label&gt;</code></pre>
+        <p>This way, we can use the following CSS rule to set a style when the user has focus on a specific radio button:</p>
+        <pre><code>.theme-switch:focus + .switch-label {
+  /* style properties */
+}</code></pre>
+        <p>This, however, means that we won't be able to use theme-specific styling for our switch labels, since they have to be placed <em>outside of our themed container</em> (<code>#page</code>). You will still have access to the default theme's colors though, since these are declared on <code>:root</code>.</p>
+      </main>
