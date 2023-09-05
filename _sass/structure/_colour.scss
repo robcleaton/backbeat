@@ -172,3 +172,9 @@ ul.colour-shades {
     background: var(--semantic-neutral-90);
   }
 }
+
+.btn-primary {
+  background: var(--primary-accent);
+  color: var(--semantic-neutral-0);
+  border-color: var(--primary-accent);
+}
