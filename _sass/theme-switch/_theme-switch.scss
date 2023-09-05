@@ -80,7 +80,7 @@
   background: var(--bg-color);
   color: var(--text-color);
   transition: color .2s, background-color .2s;
-  height: 100%;
+  min-height: 100%;
 }
 
 a {
