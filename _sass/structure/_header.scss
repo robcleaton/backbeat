@@ -4,7 +4,7 @@ header {
   z-index: 1;
 
   .navbar {
-    background-color: black !important;
+    background: var(--semantic-neutral-80) !important;
     z-index: 100;
 
     .container-fluid {
