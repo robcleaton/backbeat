@@ -1,6 +1,8 @@
 html, body {
+  background: var(--bg-color);
   height: 100%;
   font-family: var(--font-brand);
+  font-weight: var(--font-brand-regular);
 }
 
 .flex-container, .content {
