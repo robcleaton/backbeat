@@ -11,9 +11,6 @@ excerpt: Design System template site
 .row {
   margin-left: 0px;
 }
-.fluid-block {
-  background: pink;
-}
 .img-cover {
   object-fit: cover;
   height: 100%;
@@ -21,6 +18,53 @@ excerpt: Design System template site
 }
 
 </style>
+<div class="fluid-block mt-5 mb-5 pt-4">
+  <div class="container">
+    <p class="h2">Category cards</p>
+  </div>
+  <div class="scroll-container ps-4 pb-5">
+    <div class="col-sm-3 me-3" style="min-width: 180px;">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603665143615-4b7cafb5366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 me-3" style="min-width: 180px;">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603665143615-4b7cafb5366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 me-3" style="min-width: 180px;">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603665143615-4b7cafb5366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 me-3" style="min-width: 180px;">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603665143615-4b7cafb5366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 me-3" style="min-width: 180px;">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603665143615-4b7cafb5366b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container mt-1 mb-5">
   <p class="h2">Cards 2</p>
@@ -263,14 +307,6 @@ excerpt: Design System template site
   </div>
 </div>
 
-    <style>
-    div.scroll-container {
-      background-color: pink;
-      overflow: auto;
-      display: flex;
-    }
-    </style>
-
 <div class="fluid-block mt-5 mb-5 pt-4">
   <div class="container">
     <p class="h2">Scrollbox</p>
@@ -317,12 +353,20 @@ excerpt: Design System template site
       </div>
     </div>
     <div class="col-sm-5 me-3">
-      <div class="card">
+      <div class="card" aria-hidden="true">
         <img src="https://images.unsplash.com/photo-1520052205864-92d242b3a76b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2669&q=80" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
         </div>
       </div>
     </div>

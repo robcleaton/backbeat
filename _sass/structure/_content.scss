@@ -5,6 +5,13 @@ html, body {
   font-weight: var(--font-brand-regular);
 }
 
+.scroll-container {
+  overflow: auto;
+  display: flex;
+}
+.fluid-block {
+  background: var(--secondary-10);
+}
 .flex-container, .content {
   display: flex;
   flex-flow: column;
