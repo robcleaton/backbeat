@@ -61,15 +61,6 @@
   transition: opacity .2s;
 }
 
-.theme-switch:focus ~ #page .switch-label::before,
-.switch-label:hover::before {
-  text-shadow: 0 0 15px var(--switch-shadow-color);
-}
-
-.theme-switch:focus ~ #page .switch-label::after,
-.switch-label:hover::after {
-  opacity: 1;
-}
 
 /* Styling */
 #page {
