@@ -27,6 +27,14 @@
     position: fixed;
     margin-top: 56px;
     padding-bottom: 100px;
+
+    .accordion {
+      --bs-accordion-bg: none;
+      --bs-accordion-color: var(--text-color);
+    }
+    .accordion-button {
+      color: var(--text-color);
+    }
   }
 }
 .navbar-toggler {
