@@ -1,6 +1,58 @@
 ---
 layout: splash
-title: BackBEAT
 ---
+<style>
+  html, body {
+    background: #fb5436;
+    color: black;
+    font-family: monospace;
+  }
+  .flex-container, .content {
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  h1 {
+    font-family: 'Beni';
+    font-size: 26vw;
+    letter-spacing: -4px;
+    line-height: 16.8vw;
+    color: #322121;
+  }
+  h1:hover {
+    color: antiquewhite;
+  }
+  footer {
+    background: none;
 
-More coming soon...
+  }
+  @media only screen and (max-width: 680px) {
+    h1 {
+      font-size: 30vw;
+      letter-spacing: -2px;
+      line-height: 19.8vw;
+    }
+  }
+
+  .element {
+    width: 100%;
+    height: 100%;
+    animation: pulse 5s;
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: #322121;
+    }
+    100% {
+      background-color: #fb5436;
+    }
+  }
+</style>
+
+<h1 class="mb-4">Backbeat<br>.systems</h1>
+<p class="lead">Design systems to scale across multi brands and multiple platforms.</p>
+<a class="h5" href="https://www.instagram.com/backbeat.systems/" target="_blank"><i class="bi bi-instagram"></i></a>
