@@ -19,6 +19,21 @@ header {
     }
   }
   .navbar-brand {
-    color: white !important;
+    display: flex;
+    flex-direction: row;
+    
+    .backbeat-logo {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 36px;
+      width: 36px;
+    }
+    .backbeat-logo.dark {
+      background-image: url("/assets/css/assets/images/backbeat-dark.svg");
+    }
+    .backbeat-logo.sand {
+      background-image: url("/assets/css/assets/images/backbeat-sand.svg");
+    }
   }
 }
