@@ -7,6 +7,20 @@ layout: splash
     color: black;
     font-family: monospace;
   }
+  .backbeat-logo {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: clamp(0px, 14vw, 80px);
+    width: clamp(0px, 14vw, 80px);
+    margin: auto;
+  }
+  .backbeat-logo.dark {
+    background-image: url("/assets/css/assets/images/backbeat-dark.svg");
+  }
+  .backbeat-logo.dark:hover {
+    background-image: url("/assets/css/assets/images/backbeat-sand.svg");
+  }
   .flex-container, .content {
     height: auto;
     margin: 0;
@@ -53,6 +67,7 @@ layout: splash
   }
 </style>
 
+<div class="backbeat-logo dark mb-4"></div>
 <h1 class="mb-4">Backbeat<br>.systems</h1>
 <p class="lead">Design systems to scale across multi brands and multiple platforms.</p>
 <a class="h5" href="https://www.instagram.com/backbeat.systems/" target="_blank"><i class="bi bi-instagram"></i></a>
