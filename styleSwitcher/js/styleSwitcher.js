@@ -4,7 +4,7 @@
             {
                 path: "css/customstyles/",
                 prefix: "custom",
-                inputType: "select",
+                inputType: "button",
                 session: true
             },
             options
