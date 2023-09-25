@@ -2,9 +2,9 @@
     $.fn.styleSwitcher = function (options) {
         const settings = $.extend(
             {
-                path: "css/customstyles/",
+                path: "/assets/css/styleswitcher/customstyles/",
                 prefix: "custom",
-                inputType: "select",
+                inputType: "button",
                 session: true
             },
             options

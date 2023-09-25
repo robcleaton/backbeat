@@ -24,6 +24,17 @@ a:hover {
  * Base structure
  */
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+
 .cover-container {
   max-width: 42em;
 }
@@ -103,6 +114,16 @@ a:hover {
   text-align: left;
 }
 
+.heart {
+  fill: #ffffff;
+  position: relative;
+  height: 15px;
+  top: 2px;
+  width: 36px;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
 
 @keyframes pulse {
   0% { transform: scale(1); }
