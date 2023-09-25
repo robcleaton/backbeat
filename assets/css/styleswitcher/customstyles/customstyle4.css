@@ -2,6 +2,9 @@ html,
 body {
   background-color: yellow;
 }
+header .navbar, footer {
+    background: orange !important;
+}
 .hero-block {
   background: orange;
 }
