@@ -29,11 +29,11 @@ header .navbar {
   button.pink {
     background: pink;
   }
+  button.active {
+    border: 4px solid black;
+  }
 }
-.active {
-  background-color: #666;
-  color: white;
-}
+
 
 /* Links */
 a,

@@ -2,18 +2,41 @@
   <div class="container">
 
     <div id="colorpick">
-      <button class="default active" data-value="defaultstyles"></button>
-      <button class="blue" data-value="customstyle1"></button>
-      <button class="green" data-value="customstyle2"></button>
-      <button class="purple" data-value="customstyle3"></button>
-      <button class="yellow" data-value="customstyle4"></button>
-      <button class="pink" data-value="customstyle5"></button>
+      <button class="btn default" data-value="defaultstyles"></button>
+      <button class="btn blue" data-value="customstyle1"></button>
+      <button class="btn green" data-value="customstyle2"></button>
+      <button class="btn purple" data-value="customstyle3"></button>
+      <button class="btn yellow" data-value="customstyle4"></button>
+      <button class="btn pink" data-value="customstyle5"></button>
     </div>
 
     <h1>Footer</h1>
     <p>©2023 <a href="https://warface.co.uk/" target="_blank">warface</a></p>
   </div>
 </footer>
+
+<script>
+// Get the container element
+var btnContainer = document.getElementById("colorpick");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    // Add the active class to the current/clicked button
+    this.className += " active";
+  });
+}
+</script>
 
 
 <!-- Theme switcher script -->
@@ -37,8 +60,7 @@
 <!-- StyleSwitcher JS -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
 
