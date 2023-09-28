@@ -1,10 +1,9 @@
-html,
-body {
+:root {
+  --primary-accent: aquamarine;
+  --secondary-10: aquamarine;
+  --semantic-neutral-80: green;
+}
+
+html, body {
   background-color: #16a085;
-}
-header .navbar, footer {
-    background: green !important;
-}
-.hero-block {
-  background: aquamarine;
 }

@@ -1,10 +1,9 @@
-html,
-body {
+:root {
+  --primary-accent: red;
+  --secondary-10: red;
+  --semantic-neutral-80: red;
+}
+
+html, body {
   background-color: pink;
-}
-header .navbar, footer {
-    background: red !important;
-}
-.hero-block {
-  background: red;
 }

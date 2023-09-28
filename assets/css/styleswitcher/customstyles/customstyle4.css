@@ -1,10 +1,9 @@
-html,
-body {
+:root {
+  --primary-accent: orange;
+  --secondary-10: orange;
+  --semantic-neutral-80: orange;
+}
+
+html, body {
   background-color: yellow;
-}
-header .navbar, footer {
-    background: orange !important;
-}
-.hero-block {
-  background: orange;
 }

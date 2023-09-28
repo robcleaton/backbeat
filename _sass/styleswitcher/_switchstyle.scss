@@ -4,6 +4,36 @@
 header .navbar {
   background: var(--semantic-neutral-80) !important;
 }
+#colorpick button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+#colorpick {
+  button.default {
+    background: white;
+  }
+  button.blue {
+    background: blue;
+  }
+  button.green {
+    background: green;
+  }
+  button.purple {
+    background: purple;
+  }
+  button.yellow {
+    background: yellow;
+  }
+  button.pink {
+    background: pink;
+  }
+}
+.active {
+  background-color: #666;
+  color: white;
+}
 
 /* Links */
 a,

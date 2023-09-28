@@ -1,10 +1,8 @@
-html,
-body {
+:root {
+  --primary-accent: darkslateblue;
+  --secondary-10: darkslateblue;
+  --semantic-neutral-80: blue;
+}
+html, body {
   background-color: #2980b9;
-}
-header .navbar, footer {
-    background: blue !important;
-}
-.hero-block {
-  background: darkslateblue;
 }
