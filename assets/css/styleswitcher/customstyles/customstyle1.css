@@ -2,7 +2,9 @@
   --primary-accent: darkslateblue;
   --secondary-10: darkslateblue;
   --semantic-neutral-80: blue;
+  --font-brand: 'Beni';
 }
+
 html, body {
   background-color: #2980b9;
   font-family: monospace;

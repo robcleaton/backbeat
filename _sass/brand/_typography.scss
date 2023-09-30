@@ -19,6 +19,9 @@
   font-size: 2.4rem;
   line-height: 1.9rem;
 }
+h1 {
+  font-family: var(--font-brand);
+}
 
 a, .nav-link {
   color: var(--primary);

@@ -2,6 +2,7 @@
   --primary-accent: aquamarine;
   --secondary-10: aquamarine;
   --semantic-neutral-80: green;
+  --font-brand: monospace;
 }
 
 html, body {
