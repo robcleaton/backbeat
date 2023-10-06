@@ -9,3 +9,8 @@ html, body {
   background-color: #2980b9;
   font-family: monospace;
 }
+
+@font-face {
+  font-family: 'Beni';
+  src: url(assets/fonts/BeniBlack.ttf);
+}

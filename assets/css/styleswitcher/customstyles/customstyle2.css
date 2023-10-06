@@ -2,10 +2,15 @@
   --primary-accent: aquamarine;
   --secondary-10: aquamarine;
   --semantic-neutral-80: green;
-  --font-brand: monospace;
+  --font-brand: 'Motter_Ombra';
 }
 
 html, body {
   background-color: #16a085;
-  font-family: Roboto;
+  font-family: 'Roboto'
+}
+
+@font-face {
+  font-family: 'Motter_Ombra';
+  src: url(/assets/css/assets/fonts/Motter_Ombra.ttf);
 }
