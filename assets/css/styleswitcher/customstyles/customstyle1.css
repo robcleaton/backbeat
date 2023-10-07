@@ -12,5 +12,5 @@ html, body {
 
 @font-face {
   font-family: 'Beni';
-  src: url(assets/fonts/BeniBlack.ttf);
+  src: url(/assets/css/assets/fonts/BeniBlack.ttf);
 }

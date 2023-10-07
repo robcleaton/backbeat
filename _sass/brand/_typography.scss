@@ -8,6 +8,11 @@
   --font-brand-thick: 900;
 }
 
+@font-face {
+  font-family: 'Beni';
+  src: url(assets/fonts/BeniBlack.ttf);
+}
+
 .navbar-brand {
   font-weight: inherit !important;
   font-size: 2.4rem;
