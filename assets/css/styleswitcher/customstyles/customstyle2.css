@@ -7,7 +7,10 @@
 
 html, body {
   background-color: #16a085;
-  font-family: Roboto;
+  font-family: 'Roboto';
+}
+h3 {
+  font-family: var(--font-brand);
 }
 
 @font-face {

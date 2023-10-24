@@ -1,0 +1,99 @@
+---
+layout: sample
+---
+<style>
+  .backbeat-logo {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: clamp(0px, 14vw, 80px);
+    width: clamp(0px, 14vw, 80px);
+    margin: auto;
+  }
+  .backbeat-logo.dark {
+    background-image: url("/assets/css/assets/images/backbeat-dark.svg");
+  }
+  .backbeat-logo.dark:hover {
+    background-image: url("/assets/css/assets/images/backbeat-sand.svg");
+  }
+  .flex-container, .content {
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  h1 {
+    font-size: 26vw;
+    letter-spacing: -4px;
+    line-height: 16.8vw;
+    color: #322121;
+  }
+  h1:hover {
+    color: antiquewhite;
+  }
+  footer {
+    background: none;
+    margin: 0px;
+
+    .container {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+  header, .menu-desktop, footer h1 {
+    display: none;
+  }
+
+  @media only screen and (max-width: 680px) {
+    h1 {
+      font-size: 30vw;
+      letter-spacing: -2px;
+      line-height: 19.8vw;
+    }
+  }
+
+  .element {
+    width: 100%;
+    height: 100%;
+    animation: pulse 5s;
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: #322121;
+    }
+    100% {
+      background-color: #fb5436;
+    }
+  }
+</style>
+
+<div class="backbeat-logo dark mb-4"></div>
+<h3 class="mb-4">3. Cos right now I see clearer than most, I sit here contended with this cheese on toast.</h3>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWJzdHJhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="...">
+      <h3 class="mb-4">1. Cos right now I see clearer than most, I sit here contended with this cheese on toast.</h3>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWJzdHJhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="...">
+      <h3 class="mb-4">2. Cos right now I see clearer than most, I sit here contended with this cheese on toast.</h3>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWJzdHJhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="...">
+      <h3 class="mb-4">3. Cos right now I see clearer than most, I sit here contended with this cheese on toast.</h3>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
