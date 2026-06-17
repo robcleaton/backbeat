@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beni — Weight Wave Demo</title>
+    <style>
+        /* ── LOAD ALL 4 BENI WEIGHTS ── */
+        @font-face {
+            font-family: 'Beni';
+            src: url('file:///Users/robcleaton/Library/Fonts/BeniLight.ttf') format('truetype');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'Beni';
+            src: url('file:///Users/robcleaton/Library/Fonts/BeniRegular.ttf') format('truetype');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Beni';
+            src: url('file:///Users/robcleaton/Library/Fonts/BeniBold.ttf') format('truetype');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'Beni';
+            src: url('file:///Users/robcleaton/Library/Fonts/BeniBlack.ttf') format('truetype');
+            font-weight: 900;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            background: #0B0B0B;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Beni', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        /* ── MAIN ANIMATION ──
+           Each letter runs the same 4-step wave but staggered,
+           so at any moment they sit at different weights.
+           Because Beni is static, the browser snaps to the
+           nearest loaded weight: 300 / 400 / 700 / 900.       */
+        @keyframes beni-wave {
+            0%, 100% { font-weight: 900; }
+            33%       { font-weight: 400; }
+            66%       { font-weight: 300; }
+        }
+
+        .word {
+            display: flex;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .letter {
+            display: inline-block;
+            font-size: clamp(80px, 15vw, 180px);
+            color: #ffffff;
+            animation: beni-wave 4s ease-in-out infinite;
+        }
+
+        /* 8 letters, staggered so each sits 0.5 s apart in the 4s cycle */
+        .letter:nth-child(1) { animation-delay:  0s;    }
+        .letter:nth-child(2) { animation-delay: -0.5s;  }
+        .letter:nth-child(3) { animation-delay: -1s;    }
+        .letter:nth-child(4) { animation-delay: -1.5s;  }
+        .letter:nth-child(5) { animation-delay: -2s;    }
+        .letter:nth-child(6) { animation-delay: -2.5s;  }
+        .letter:nth-child(7) { animation-delay: -3s;    }
+        .letter:nth-child(8) { animation-delay: -3.5s;  }
+
+        /* ── WEIGHT REFERENCE STRIP ── */
+        .reference {
+            display: flex;
+            gap: 48px;
+            align-items: baseline;
+        }
+
+        .ref-letter {
+            color: rgba(255,255,255,0.2);
+            font-size: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ref-letter span {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.15);
+            text-transform: uppercase;
+        }
+
+        /* ── LABELS ── */
+        .label {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.18);
+        }
+
+        .note {
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.1);
+            text-align: center;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="label">Beni — 4-weight stepped wave</p>
+
+    <div class="word">
+        <span class="letter">B</span>
+        <span class="letter">A</span>
+        <span class="letter">C</span>
+        <span class="letter">K</span>
+        <span class="letter">B</span>
+        <span class="letter">E</span>
+        <span class="letter">A</span>
+        <span class="letter">T</span>
+    </div>
+
+    <!-- Reference: the 4 available weights -->
+    <div class="reference">
+        <div class="ref-letter" style="font-weight:300">B<span>Light 300</span></div>
+        <div class="ref-letter" style="font-weight:400">B<span>Regular 400</span></div>
+        <div class="ref-letter" style="font-weight:700">B<span>Bold 700</span></div>
+        <div class="ref-letter" style="font-weight:900">B<span>Black 900</span></div>
+    </div>
+
+    <p class="note">
+        Static font — browser snaps to the 4 loaded weights.<br>
+        No smooth interpolation between steps.
+    </p>
+
+</body>
+</html>

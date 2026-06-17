@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B — Backbeat.systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent:     #D4F500;
+            --a:          212, 245, 0;   /* accent as RGB for rgba() */
+            --bg:         #0B0B0B;
+            --letter-sz:  clamp(160px, 34vmin, 400px);
+            --ring-sz:    clamp(180px, 38.5vmin, 450px);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* ─── SCENE ─────────────────────────────── */
+        .scene {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Breathing ambient radial glow */
+        .scene::before {
+            content: '';
+            position: absolute;
+            inset: calc(var(--ring-sz) / -2);
+            border-radius: 50%;
+            width: calc(var(--ring-sz) * 1.8);
+            height: calc(var(--ring-sz) * 1.8);
+            background: radial-gradient(
+                circle at center,
+                rgba(var(--a), 0.09) 0%,
+                rgba(var(--a), 0.03) 35%,
+                transparent 65%
+            );
+            animation: pad-breathe 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pad-breathe {
+            0%, 100% { opacity: 0.5; transform: scale(0.9); }
+            50%       { opacity: 1;   transform: scale(1.1); }
+        }
+
+        /* ─── LETTER ─────────────────────────────── */
+        .letter {
+            font-family: 'Syne', sans-serif;
+            font-size: var(--letter-sz);
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 0.88;
+            letter-spacing: -0.03em;
+            position: relative;
+            z-index: 10;
+            user-select: none;
+            will-change: transform, filter;
+            animation: letter-breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes letter-breathe {
+            0%, 100% {
+                transform: scale(1);
+                filter:
+                    drop-shadow(0 0 18px rgba(var(--a), 0.5))
+                    drop-shadow(0 0 55px rgba(var(--a), 0.15))
+                    drop-shadow(0 0 110px rgba(var(--a), 0.05));
+            }
+            50% {
+                transform: scale(1.02);
+                filter:
+                    drop-shadow(0 0 28px rgba(var(--a), 0.75))
+                    drop-shadow(0 0 75px rgba(var(--a), 0.22))
+                    drop-shadow(0 0 140px rgba(var(--a), 0.08));
+            }
+        }
+
+        /* ─── RINGS WRAPPER ─────────────────────── */
+        .rings {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        /* ─── STEADY RIPPLE RINGS ───────────────── */
+        .ring {
+            position: absolute;
+            width:  var(--ring-sz);
+            height: var(--ring-sz);
+            border-radius: 50%;
+            border: 1.5px solid rgba(var(--a), 0.75);
+            box-shadow:
+                0 0 12px  rgba(var(--a), 0.22),
+                inset 0 0 8px rgba(var(--a), 0.06);
+            opacity: 0;
+            will-change: transform, opacity;
+            animation: ripple-out 3.5s cubic-bezier(0.12, 0.55, 0.3, 1) infinite;
+        }
+
+        /* 5 rings × 0.7 s stagger = 3.5 s = 1 full cycle — seamless loop */
+        .ring:nth-child(1) { animation-delay: 0s; }
+        .ring:nth-child(2) { animation-delay: 0.7s; }
+        .ring:nth-child(3) { animation-delay: 1.4s; }
+        .ring:nth-child(4) { animation-delay: 2.1s; }
+        .ring:nth-child(5) { animation-delay: 2.8s; }
+
+        @keyframes ripple-out {
+            0% {
+                transform: scale(1);
+                opacity: 0.72;
+                border-width: 2px;
+            }
+            45% {
+                opacity: 0.28;
+            }
+            80% {
+                opacity: 0.06;
+            }
+            100% {
+                transform: scale(4.2);
+                opacity: 0;
+                border-width: 0.3px;
+            }
+        }
+
+        /* ─── BURST RINGS (click) ───────────────── */
+        .ring-burst {
+            position: absolute;
+            width:  var(--ring-sz);
+            height: var(--ring-sz);
+            border-radius: 50%;
+            border: 3px solid rgba(var(--a), 1);
+            box-shadow:
+                0 0 20px  rgba(var(--a), 0.6),
+                0 0 50px  rgba(var(--a), 0.2),
+                inset 0 0 16px rgba(var(--a), 0.1);
+            animation: burst-out 1.2s cubic-bezier(0.05, 0.65, 0.2, 1) forwards;
+            will-change: transform, opacity;
+        }
+
+        @keyframes burst-out {
+            0%   { transform: scale(0.8);  opacity: 1; }
+            100% { transform: scale(5.8);  opacity: 0; }
+        }
+
+        /* ─── LETTER FLASH (click) ──────────────── */
+        @keyframes letter-flash {
+            0%   {
+                transform: scale(1);
+                filter:
+                    drop-shadow(0 0 18px rgba(var(--a), 0.5))
+                    drop-shadow(0 0 55px rgba(var(--a), 0.15));
+            }
+            30%  {
+                transform: scale(1.05);
+                filter:
+                    drop-shadow(0 0 50px rgba(var(--a), 1))
+                    drop-shadow(0 0 120px rgba(var(--a), 0.5))
+                    drop-shadow(0 0 240px rgba(var(--a), 0.2));
+            }
+            100% {
+                transform: scale(1);
+                filter:
+                    drop-shadow(0 0 18px rgba(var(--a), 0.5))
+                    drop-shadow(0 0 55px rgba(var(--a), 0.15));
+            }
+        }
+
+        .letter.flash {
+            animation: letter-flash 0.6s ease-out forwards;
+        }
+
+        /* ─── WORDMARK ─────────────────────────── */
+        .wordmark {
+            position: fixed;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Syne', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(var(--a), 0.2);
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* ─── TAP HINT ─────────────────────────── */
+        .hint {
+            position: fixed;
+            top: 26px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Syne', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: hint-out 1.5s ease-out 3.5s forwards;
+        }
+
+        @keyframes hint-out { to { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <p class="hint">tap anywhere to pulse</p>
+
+    <div class="scene">
+        <div class="rings" id="rings">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <span class="letter" id="letter">B</span>
+    </div>
+
+    <p class="wordmark">backbeat.systems</p>
+
+    <script>
+        const letter = document.getElementById('letter');
+        const rings  = document.getElementById('rings');
+
+        document.body.addEventListener('click', () => {
+            // Flash the letter
+            letter.classList.remove('flash');
+            void letter.offsetWidth; // force reflow to restart animation
+            letter.classList.add('flash');
+            letter.addEventListener('animationend', () => {
+                letter.classList.remove('flash');
+                letter.style.animation = '';
+                // Resume breathing — small timeout to avoid flicker
+                setTimeout(() => { letter.style.animation = null; }, 10);
+            }, { once: true });
+
+            // Spawn 3 burst rings, slightly staggered
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const r = document.createElement('div');
+                    r.className = 'ring-burst';
+                    rings.appendChild(r);
+                    r.addEventListener('animationend', () => r.remove(), { once: true });
+                }, i * 110);
+            }
+        });
+    </script>
+
+</body>
+</html>
