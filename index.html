@@ -12,9 +12,20 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         * { -webkit-font-smoothing: antialiased; }
 
+        @keyframes bg-cycle {
+            0%   { background-color: #E8003D; }
+            16%  { background-color: #FF6B00; }
+            33%  { background-color: #FFD600; }
+            50%  { background-color: #00C853; }
+            66%  { background-color: #2979FF; }
+            83%  { background-color: #AA00FF; }
+            100% { background-color: #E8003D; }
+        }
+
         body {
             font-family: 'Bricolage Grotesque', sans-serif;
-            background-color: #0B0B0B;
+            background-color: #E8003D;
+            animation: bg-cycle 12s ease-in-out infinite;
             color: #fff;
             min-height: 100svh;
             display: flex;
@@ -49,26 +60,11 @@
             margin-top: 0.15em;
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8J78SBWR9L"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8J78SBWR9L');
-    </script>
 </head>
 <body>
 
     <h1>
-        <span class="letter-anim" style="animation-delay:0s">B</span><span
-            class="letter-anim" style="animation-delay:-0.75s">A</span><span
-            class="letter-anim" style="animation-delay:-1.5s">C</span><span
-            class="letter-anim" style="animation-delay:-2.25s">K</span><span
-            class="letter-anim" style="animation-delay:-3s">B</span><span
-            class="letter-anim" style="animation-delay:-3.75s">E</span><span
-            class="letter-anim" style="animation-delay:-4.5s">A</span><span
-            class="letter-anim" style="animation-delay:-5.25s">T</span>
+        <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span>
     </h1>
     <div class="suffix">.systems</div>
 
