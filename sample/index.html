@@ -29,7 +29,7 @@
             from { transform: translateX(0); }
             to   { transform: translateX(-50%); }
         }
-        .animate-marquee { animation: marquee 28s linear infinite; }
+        .animate-marquee { animation: marquee 60s linear infinite; }
 
         @keyframes letter-wave {
             0%, 100% { font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96; }
@@ -45,6 +45,20 @@
                         box-shadow 0.25s ease;
         }
         .card:hover { transform: scale(1.015); }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2.2vw, 1.5rem);
+            font-variation-settings: 'wght' 200, 'wdth' 75, 'opsz' 12;
+            color: rgba(0,0,0,0.4);
+            line-height: 1.2;
+            user-select: none;
+        }
+        .hero-sub {
+            font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+            font-variation-settings: 'wght' 200, 'wdth' 75, 'opsz' 12;
+            color: rgba(0,0,0,0.3);
+            user-select: none;
+        }
 
         .noise::after {
             content: '';
@@ -63,10 +77,10 @@
         <a href="/" class="text-white font-extrabold text-xl tracking-tight leading-none">
             backbeat<span class="text-white/35 font-light">.systems</span>
         </a>
-        <div class="hidden md:flex gap-8 font-body text-sm text-white/40 items-center">
+        <!-- <div class="hidden md:flex gap-8 font-body text-sm text-white/40 items-center">
             <a href="/services" class="hover:text-white transition-colors duration-200">Services</a>
             <a href="/about" class="hover:text-white transition-colors duration-200">About</a>
-        </div>
+        </div> -->
         <a href="mailto:hello@backbeat.systems"
            class="bg-white text-black text-sm font-bold px-5 py-2.5 rounded-full
                   hover:bg-white/85 transition-colors duration-200 font-body tracking-wide">
@@ -78,38 +92,36 @@
     <div class="px-5 md:px-6 pb-3 md:pb-4">
         <div class="bg-[#111111] rounded-3xl overflow-hidden flex items-center" style="height: 84px;">
             <div class="flex items-center animate-marquee whitespace-nowrap w-max">
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">SYSTEM RESCUE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">SYSTEM RESCUE</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">WCAG 2.2</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">WCAG 2.2</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">AI INTEGRATION</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">AI INTEGRATION</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGNOPS</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGNOPS</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
                 <!-- duplicate for seamless loop -->
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">SYSTEM RESCUE</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">WCAG 2.2</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">WCAG 2.2</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">AI INTEGRATION</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">AI INTEGRATION</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGNOPS</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">DESIGNOPS</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white/[0.06] tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
+                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
                 <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
             </div>
         </div>
@@ -137,9 +149,13 @@
                                 leading-[0.85] tracking-tighter select-none">
                         <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><br>
                         <span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span><br>
-                        <span class="text-black/15" style="font-variation-settings:'wght' 200,'wdth' 75">.SYS</span>
+                        <span class="text-black/15" style="font-variation-settings:'wght' 200,'wdth' 75">.systems</span>
                     </h1>
-                    <p class="font-body text-black/50 text-base md:text-lg mt-6 max-w-xs leading-relaxed">
+                    <div class="mt-6">
+                        <div class="hero-tagline">Rhythm Is the System</div>
+                        <div class="hero-sub mt-1">Infrastructure your product moves to</div>
+                    </div>
+                    <p class="font-body text-black/50 text-base md:text-lg mt-3 max-w-xs leading-relaxed">
                         We build and govern design systems for ambitious digital product teams — with token architecture, AI-readiness, WCAG 2.2 accessibility, and adoption built in from day one.
                     </p>
                 </div>
@@ -176,6 +192,10 @@
                  style="min-height: 248px;">
                 <span class="font-body text-white/30 text-[10px] uppercase tracking-[0.2em]">Our specialisms</span>
                 <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Agentic Workflows</span>
+                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">AI Agents</span>
+                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Document automation</span>
+                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">MCP Integrations</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Token Architecture</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Token Migration</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Semantic Tokens</span>
@@ -186,16 +206,9 @@
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Contribution Models</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">WCAG 2.2</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">EU AI Act</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Design System Rescue</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Accessibility</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">AI Agents</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Agentic Workflows</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">MCP Integrations</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Design-to-Code</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">AI Governance</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Prompt Libraries</span>
                     <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Visual Regression</span>
-                    <span class="border border-white/15 text-white/55 rounded-full px-3.5 py-1.5 text-[11px] font-body tracking-wide font-medium">Component Scaffolding</span>
                 </div>
             </div>
 
@@ -382,10 +395,7 @@
     <footer class="px-5 md:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <span class="font-body text-white/20 text-xs">© 2026 Backbeat.systems. All rights reserved.</span>
         <div class="flex gap-6 items-center">
-            <a href="#" class="font-body text-white/25 text-xs hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" class="font-body text-white/25 text-xs hover:text-white transition-colors">Twitter / X</a>
-            <a href="#" class="font-body text-white/25 text-xs hover:text-white transition-colors">Dribbble</a>
-            <a href="#" class="font-body text-white/25 text-xs hover:text-white transition-colors">Privacy</a>
+            <a href="https://www.linkedin.com/company/backbeat-systems" target="_blank" class="font-body text-white/25 text-xs hover:text-white transition-colors">LinkedIn</a>
         </div>
     </footer>
 
