@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System Consultancy | Token Architecture, Governance & AI Integration | Backbeat</title>
+    <title>Design System Consultancy | Bento Grid + Animated Hero | Backbeat</title>
     <meta name="description" content="Backbeat builds and governs design systems for ambitious product teams — token architecture, WCAG 2.2 accessibility, AI integration, and DesignOps governance for SaaS, fintech, and health tech teams from Series A to enterprise.">
     <meta name="google-site-verification" content="dt83dwPy2H1I4QQd49_-VSn3PJOR8wYIVwQW7YBA-Gw" />
 
@@ -19,11 +19,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { -webkit-font-smoothing: antialiased; }
         body { font-family: 'Bricolage Grotesque', sans-serif; background-color: #0B0B0B; }
-        .font-body { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+        .font-body { font-family: 'Inter', sans-serif; }
 
         @keyframes marquee {
             from { transform: translateX(0); }
@@ -60,6 +60,66 @@
             user-select: none;
         }
 
+        /* ── full-page animated header, ported from the homepage ── */
+        @keyframes bg-cycle {
+            0%   { background-color: #E8003D; }
+            16%  { background-color: #FF6B00; }
+            33%  { background-color: #FFD600; }
+            50%  { background-color: #00C853; }
+            66%  { background-color: #2979FF; }
+            83%  { background-color: #AA00FF; }
+            100% { background-color: #E8003D; }
+        }
+
+        .site-header {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #fff;
+            animation: bg-cycle 36s ease-in-out infinite;
+        }
+
+        .header-spacer { height: 90svh; }
+
+        .page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header-title {
+            font-size: clamp(2rem, 14vw, 11rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            text-align: center;
+            user-select: none;
+        }
+
+        .site-header-tagline {
+            font-size: clamp(1rem, 2.2vw, 3rem);
+            font-variation-settings: 'wght' 200, 'wdth' 75, 'opsz' 12;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 4px;
+            margin-top: 0.5em;
+            text-transform: uppercase;
+            user-select: none;
+        }
+
+        .site-header-sub {
+            font-size: clamp(0.8rem, 1.6vw, 1.6rem);
+            font-variation-settings: 'wght' 200, 'wdth' 75, 'opsz' 12;
+            color: rgba(255,255,255,0.25);
+            letter-spacing: -0.02em;
+            font-style: italic;
+            text-transform: uppercase;
+            margin-top: 0.3em;
+            user-select: none;
+        }
+
         .noise::after {
             content: '';
             position: absolute;
@@ -72,156 +132,20 @@
 </head>
 <body class="min-h-screen text-white">
 
-    <!-- ───────── NAV ───────── -->
-    <nav class="px-3 md:px-6 py-5 flex items-center justify-between">
-        <a href="/" class="text-white font-extrabold text-2xl tracking-tight leading-none">
-            <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">a</span><span class="letter-anim" style="animation-delay:-1.5s">c</span><span class="letter-anim" style="animation-delay:-2.25s">k</span><span class="letter-anim" style="animation-delay:-3s">b</span><span class="letter-anim" style="animation-delay:-3.75s">e</span><span class="letter-anim" style="animation-delay:-4.5s">a</span><span class="letter-anim" style="animation-delay:-5.25s">t</span><span class="text-white/35 font-light">.systems</span>
-        </a>
-        <!-- <div class="hidden md:flex gap-8 font-body text-sm text-white/40 items-center">
-            <a href="/services" class="hover:text-white transition-colors duration-200">Services</a>
-            <a href="/about" class="hover:text-white transition-colors duration-200">About</a>
-        </div> -->
-        <a href="mailto:hello@backbeat.systems"
-           class="bg-white text-black text-sm font-bold px-5 py-2.5 rounded-full
-                  hover:bg-white/85 transition-colors duration-200 font-body tracking-wide">
-            Start a project
-        </a>
-    </nav>
-
-    <!-- ───────── MARQUEE ───────── -->
-    <div class="px-3 md:px-6 pb-3 md:pb-4">
-        <div class="bg-[#111111] rounded-3xl overflow-hidden flex items-center" style="height: 84px;">
-            <div class="flex items-center animate-marquee whitespace-nowrap w-max">
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">WCAG 2.2</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">AI INTEGRATION</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGNOPS</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <!-- duplicate for seamless loop -->
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN SYSTEMS</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN ARCHITECTURE</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGN GOVERNANCE</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">WCAG 2.2</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">AI INTEGRATION</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">DESIGNOPS</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-                <span class="text-[38px] font-extrabold text-white tracking-tight px-10 leading-none">TOKEN MIGRATION</span>
-                <span class="text-[72px] font-extrabold text-white/15 px-3 leading-none" style="margin-top: 24px">*</span>
-            </div>
-        </div>
+    <!-- ───────── FULL-PAGE ANIMATED HEADER ───────── -->
+    <div class="site-header">
+        <h1 class="site-header-title">
+            <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span>
+        </h1>
+        <div class="site-header-tagline">Design Systems Consultancy</div>
+        <div class="site-header-sub">Rhythm in the System</div>
     </div>
+    <div class="header-spacer"></div>
 
-    <!-- ───────── VIDEO HEADER ───────── -->
-    <div class="px-3 md:px-6 pb-3 md:pb-4">
-        <div class="rounded-3xl overflow-hidden relative" style="height: 72vh; border: 4px solid rgba(255,255,255,0.15);">
-            <video id="hero-video" autoplay muted loop playsinline
-                   class="w-full h-full object-cover" style="cursor: url('cursor.svg') 16 1, pointer;">
-                <source src="video.mp4" type="video/mp4">
-            </video>
-            <!-- Centered animated wordmark -->
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div class="text-white font-extrabold tracking-tighter leading-none select-none text-center"
-                     style="font-size: clamp(3rem, 12vw, 11rem); text-shadow: 0 4px 40px rgba(0,0,0,0.5);">
-                    <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">a</span><span class="letter-anim" style="animation-delay:-1.5s">c</span><span class="letter-anim" style="animation-delay:-2.25s">k</span><span class="letter-anim" style="animation-delay:-3s">b</span><span class="letter-anim" style="animation-delay:-3.75s">e</span><span class="letter-anim" style="animation-delay:-4.5s">a</span><span class="letter-anim" style="animation-delay:-5.25s">t</span>
-                </div>
-            </div>
-            <!-- Center play indicator (shows when paused) -->
-            <div id="play-indicator" class="absolute inset-0 flex items-center justify-center pointer-events-none" style="display:none;">
-                <div class="bg-black/40 backdrop-blur-sm rounded-full p-5">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </div>
-            </div>
-            <!-- Volume overlay -->
-            <div class="absolute bottom-5 right-5 flex items-center gap-3 bg-black/40 backdrop-blur-sm rounded-full px-4 py-2.5">
-                <button id="mute-btn" onclick="toggleMute()"
-                        class="text-white/80 hover:text-white transition-colors"
-                        style="background:none;border:none;cursor:pointer;padding:0;line-height:1;">
-                    <svg id="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3.63 3.63a1 1 0 0 0 0 1.41L7.29 8.7 7 9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3l4 4a1 1 0 0 0 1.65-.76v-3.58l4.18 4.18a7 7 0 0 1-2.41 1.19 1 1 0 1 0 .52 1.93 9 9 0 0 0 3.32-1.67l1.34 1.34a1 1 0 1 0 1.41-1.41L5.05 3.63a1 1 0 0 0-1.42 0zM12 5.17v3.29l-2.32-2.32L12 5.17zM19 12a7 7 0 0 1-.63 2.9l1.46 1.46A9 9 0 0 0 21 12a9 9 0 0 0-6.54-8.65 1 1 0 0 0-.52 1.93A7 7 0 0 1 19 12zm-7 7-1.17-.66L9 16.5V15l-1-1H4v-4h2.5l-2-2H4a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3h3l4 4a1 1 0 0 0 1.65-.76V18.3L12 19zM15.5 12a3.5 3.5 0 0 1-1.8 3.07l1.43 1.43A5.5 5.5 0 0 0 17.5 12a5.5 5.5 0 0 0-3.07-4.93 1 1 0 1 0-.86 1.8A3.5 3.5 0 0 1 15.5 12z"/>
-                    </svg>
-                    <svg id="icon-sound" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                    </svg>
-                </button>
-                <input id="volume-slider" type="range" min="0" max="1" step="0.05" value="0"
-                       onchange="setVolume(this.value)" oninput="setVolume(this.value)"
-                       style="width:80px; accent-color: white; cursor: pointer;">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const video = document.getElementById('hero-video');
-        const slider = document.getElementById('volume-slider');
-        const iconMuted = document.getElementById('icon-muted');
-        const iconSound = document.getElementById('icon-sound');
-
-        const playIndicator = document.getElementById('play-indicator');
-
-        // Unmute on first interaction
-        let hasInteracted = false;
-        function firstUnmute() {
-            if (hasInteracted) return;
-            hasInteracted = true;
-            video.muted = false;
-            video.volume = 0.8;
-            slider.value = 0.8;
-            iconMuted.style.display = 'none';
-            iconSound.style.display = 'block';
-        }
-
-        // Click anywhere on the video to toggle play/pause
-        video.addEventListener('click', () => {
-            firstUnmute();
-            if (video.paused) {
-                video.play();
-                playIndicator.style.display = 'none';
-            } else {
-                video.pause();
-                playIndicator.style.display = 'flex';
-            }
-        });
-
-        function toggleMute() {
-            if (video.muted || video.volume === 0) {
-                video.muted = false;
-                video.volume = slider.value > 0 ? parseFloat(slider.value) : 0.5;
-                slider.value = video.volume;
-                iconMuted.style.display = 'none';
-                iconSound.style.display = 'block';
-            } else {
-                video.muted = true;
-                iconMuted.style.display = 'block';
-                iconSound.style.display = 'none';
-            }
-        }
-
-        function setVolume(val) {
-            video.volume = parseFloat(val);
-            video.muted = parseFloat(val) === 0;
-            iconMuted.style.display = parseFloat(val) === 0 ? 'block' : 'none';
-            iconSound.style.display = parseFloat(val) === 0 ? 'none' : 'block';
-        }
-    </script>
+    <div class="page-content">
 
     <!-- ───────── BENTO GRID ───────── -->
-    <main class="px-3 md:px-6 pb-5">
+    <main class="px-5 md:px-6 pb-5">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4">
 
             <!-- ① HERO — 4 cols, 2 rows -->
@@ -232,22 +156,6 @@
                 <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-black/4 translate-x-1/3 -translate-y-1/3"></div>
 
                 <div>
-                    <span class="font-body text-[11px] font-semibold text-black/35 uppercase tracking-[0.25em]">
-                        Design System Consultancy — Series A to Enterprise
-                    </span>
-                </div>
-
-                <div>
-                    <h1 class="text-[86px] sm:text-[110px] lg:text-[130px] text-black
-                                leading-[0.85] tracking-tighter select-none">
-                        <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><br>
-                        <span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span><br>
-                        <span class="text-black/15" style="font-variation-settings:'wght' 200,'wdth' 75">.systems</span>
-                    </h1>
-                    <div class="mt-6">
-                        <div class="hero-tagline">Rhythm Is the System</div>
-                        <div class="hero-sub mt-1">Infrastructure your product moves to</div>
-                    </div>
                     <p class="font-body text-black/50 text-base md:text-lg mt-3 max-w-xs leading-relaxed">
                         We build and govern design systems for ambitious digital product teams — with token architecture, AI-readiness, WCAG 2.2 accessibility, and adoption built in from day one.
                     </p>
@@ -273,7 +181,7 @@
                         flex flex-col justify-between overflow-hidden"
                  style="min-height: 248px;">
                 <span class="font-body text-white/35 text-[10px] uppercase tracking-[0.2em]">What we do</span>
-                <p class="font-body text-[22px] md:text-[24px] font-bold text-white leading-tight mt-4">
+                <p class="text-[22px] md:text-[24px] font-bold text-white leading-tight mt-4">
                     We build and govern design systems with AI-readiness, accessibility, and adoption built in from day one.
                 </p>
             </div>
@@ -372,7 +280,7 @@
                     <span class="text-white/25 text-2xl font-serif leading-none" style="margin-top:-4px">"</span>
                 </div>
                 <div class="mt-6">
-                    <blockquote class="font-body text-[22px] md:text-[26px] font-bold text-white leading-snug tracking-tight">
+                    <blockquote class="text-[22px] md:text-[26px] font-bold text-white leading-snug tracking-tight">
                         "A design system isn't a project. It's a product, serving products."
                     </blockquote>
                     <cite class="font-body text-white/25 text-xs mt-4 not-italic block uppercase tracking-widest">
@@ -485,12 +393,14 @@
     </main>
 
     <!-- ───────── FOOTER ───────── -->
-    <footer class="px-3 md:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <footer class="px-5 md:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <span class="font-body text-white/20 text-xs">© 2026 Backbeat.systems. All rights reserved.</span>
         <div class="flex gap-6 items-center">
             <a href="https://www.linkedin.com/company/backbeat-systems" target="_blank" class="font-body text-white/25 text-xs hover:text-white transition-colors">LinkedIn</a>
         </div>
     </footer>
+
+    </div><!-- /.page-content -->
 
 </body>
 </html>

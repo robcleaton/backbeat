@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backbeat.systems — Design Systems Consultancy (Tusker alt)</title>
+    <style>
+        @font-face {
+            font-family: 'TuskerNarrow';
+            src: url('/Users/robcleaton/Library/Fonts/TuskerGrotesk-1500Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'TuskerWide';
+            src: url('/Users/robcleaton/Library/Fonts/TuskerGrotesk-9800Super.ttf') format('truetype');
+            font-weight: 800;
+        }
+        @font-face {
+            font-family: 'TuskerBody';
+            src: url('/Users/robcleaton/Library/Fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        * { -webkit-font-smoothing: antialiased; }
+
+        @keyframes bg-cycle {
+            0%   { background-color: #E8003D; }
+            16%  { background-color: #FF6B00; }
+            33%  { background-color: #FFD600; }
+            50%  { background-color: #00C853; }
+            66%  { background-color: #2979FF; }
+            83%  { background-color: #AA00FF; }
+            100% { background-color: #E8003D; }
+        }
+
+        body {
+            font-family: 'TuskerBody', sans-serif;
+            background-color: #E8003D;
+            animation: bg-cycle 36s ease-in-out infinite;
+            color: #fff;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes tusker-fade-out {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0; }
+        }
+        @keyframes tusker-fade-in {
+            0%, 100% { opacity: 0; }
+            50%      { opacity: 1; }
+        }
+
+        .letter-wrap {
+            display: inline-grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .letter-wrap span {
+            grid-area: 1 / 1;
+            letter-spacing: -0.04em;
+        }
+
+        .letter-narrow {
+            font-family: 'TuskerNarrow', sans-serif;
+            animation: tusker-fade-out 6s ease-in-out infinite;
+        }
+
+        .letter-wide {
+            font-family: 'TuskerWide', sans-serif;
+            animation: tusker-fade-in 6s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 11.5vw, 10rem);
+            line-height: 0.85;
+            text-align: center;
+            user-select: none;
+        }
+
+        .suffix {
+            font-family: 'TuskerBody', sans-serif;
+            font-size: clamp(1rem, 5.5vw, 4.5rem);
+            font-weight: 500;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: -0.02em;
+            margin-top: 0.15em;
+        }
+
+        .suffix-sm {
+            font-family: 'TuskerBody', sans-serif;
+            font-size: clamp(0.9rem, 3.8vw, 3.2rem);
+            font-weight: 500;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <span class="letter-wrap" style="animation-delay:0s"><span class="letter-narrow" style="animation-delay:0s">B</span><span class="letter-wide" style="animation-delay:0s">B</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-0.75s">A</span><span class="letter-wide" style="animation-delay:-0.75s">A</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-1.5s">C</span><span class="letter-wide" style="animation-delay:-1.5s">C</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-2.25s">K</span><span class="letter-wide" style="animation-delay:-2.25s">K</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-3s">B</span><span class="letter-wide" style="animation-delay:-3s">B</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-3.75s">E</span><span class="letter-wide" style="animation-delay:-3.75s">E</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-4.5s">A</span><span class="letter-wide" style="animation-delay:-4.5s">A</span></span><span class="letter-wrap"><span class="letter-narrow" style="animation-delay:-5.25s">T</span><span class="letter-wide" style="animation-delay:-5.25s">T</span></span>
+    </h1>
+    <div class="suffix">Design Systems Consultancy</div>
+    <div class="suffix-sm">Rhythm in the System</div>
+
+</body>
+</html>
