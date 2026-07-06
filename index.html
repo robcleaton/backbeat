@@ -112,7 +112,6 @@
             letter-spacing: -0.04em;
             text-align: center;
             user-select: none;
-            text-shadow: 0 4px 50px rgba(0,0,0,0.35);
         }
 
         .hero-overlay .suffix {
@@ -185,24 +184,160 @@
             white-space: nowrap;
             animation: marquee 60s linear infinite;
             font-family: 'Bricolage Grotesque', sans-serif;
+            font-family: Tusker Grotesk, sans-serif;
         }
 
         .marquee-item {
             font-size: 38px;
+            font-family: Tusker Grotesk, sans-serif;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: -0.02em;
             line-height: 1;
             padding: 0 40px;
         }
 
         .marquee-sep {
-            font-size: 72px;
+            font-size: 112px;
             font-weight: 800;
             color: rgba(255,255,255,0.15);
             line-height: 1;
             padding: 0 12px;
-            margin-top: 24px;
+            margin-top: 1.36%;
+        }
+
+        /* ── demo cards, ported from sample/index.html ── */
+        .demo-grid {
+            margin-top: var(--gutter);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gutter);
+        }
+        @media (min-width: 768px) {
+            .demo-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .demo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            min-height: 248px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .demo-card:hover {
+            transform: scale(1.015);
+        }
+
+        .demo-card.what-we-do {
+            background: #1C1C1C;
+        }
+        .demo-card.what-we-do::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .demo-card.specialisms {
+            background: #141414;
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .demo-card .eyebrow {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .what-we-do p {
+            font-family: monospace;
+            font-size: clamp(20px, 2vw, 24px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-top: 1rem;
+        }
+
+        .specialisms-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 1.25rem;
+        }
+
+        .specialisms-tags span {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.55);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── process card, ported from sample/index.html ── */
+        .process-card {
+            margin-top: var(--gutter);
+            background: #F0F0F0;
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+        @media (min-width: 768px) {
+            .process-card { padding: 2.5rem; }
+        }
+
+        .process-card .eyebrow {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(0,0,0,0.3);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.75rem;
+        }
+        @media (min-width: 640px) {
+            .process-steps { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .process-steps .num {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            color: rgba(0,0,0,0.07);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .process-steps h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #000000;
+            margin-top: 0.75rem;
+        }
+
+        .process-steps p {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(0,0,0,0.45);
+            margin-top: 0.4rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -240,6 +375,56 @@
             <span class="marquee-item">AI INTEGRATION</span><span class="marquee-sep">*</span>
             <span class="marquee-item">DESIGNOPS</span><span class="marquee-sep">*</span>
             <span class="marquee-item">TOKEN MIGRATION</span><span class="marquee-sep">*</span>
+        </div>
+    </div>
+
+    <div class="demo-grid">
+        <div class="demo-card what-we-do">
+            <span class="eyebrow">What we do</span>
+            <p>We build and govern design systems with AI-readiness, accessibility, and adoption built in from day one.</p>
+        </div>
+        <div class="demo-card specialisms">
+            <span class="eyebrow">Our specialisms</span>
+            <div class="specialisms-tags">
+                <span>Agentic Workflows</span>
+                <span>AI Agents</span>
+                <span>Document automation</span>
+                <span>MCP Integrations</span>
+                <span>Token Architecture</span>
+                <span>Token Migration</span>
+                <span>Semantic Tokens</span>
+                <span>Component Libraries</span>
+                <span>Figma Systems</span>
+                <span>Design Governance</span>
+                <span>DesignOps</span>
+                <span>Contribution Models</span>
+                <span>WCAG 2.2</span>
+                <span>EU AI Act</span>
+                <span>Accessibility</span>
+                <span>Design-to-Code</span>
+                <span>Visual Regression</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="process-card">
+        <span class="eyebrow">How we work</span>
+        <div class="process-steps">
+            <div>
+                <div class="num">01</div>
+                <h3>Audit &amp; discover</h3>
+                <p>We map your current state — components, token sprawl, team workflows, and platform targets. Misalignment surfaces fast.</p>
+            </div>
+            <div>
+                <div class="num">02</div>
+                <h3>Architect &amp; build</h3>
+                <p>Tokens, components, and documentation that teams actually adopt — with WCAG 2.2 compliance and governance built in from day one.</p>
+            </div>
+            <div>
+                <div class="num">03</div>
+                <h3>Scale &amp; sustain</h3>
+                <p>Governance frameworks, contribution models, and hands-on training so your team owns it long after we're gone.</p>
+            </div>
         </div>
     </div>
 
