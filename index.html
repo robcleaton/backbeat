@@ -14,6 +14,11 @@
             src: url('/Users/robcleaton/Library/Fonts/SF-Mono-Semibold.otf') format('opentype');
             font-weight: 600;
         }
+        @font-face {
+            font-family: 'Tusker Grotesk';
+            src: url('/Users/robcleaton/Library/Fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         * { -webkit-font-smoothing: antialiased; }
@@ -123,14 +128,81 @@
         }
 
         .hero-overlay .suffix-sm {
-            font-size: clamp(1.4rem, 1.6vw, 3.2rem);
-            font-variation-settings: 'wght' 200, 'wdth' 75, 'opsz' 12;
+            font-family: 'Tusker Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 1.6vw, 3.2rem);
+            font-weight: 500;
             letter-spacing: 0.4em;
             word-spacing: 0.4em;
             text-transform: uppercase;
             user-select: none;
             text-align: center;
             max-width: 80%;
+        }
+
+        .hero-overlay .cta {
+            display: inline-block;
+            margin-top: 2rem;
+            pointer-events: auto;
+            background: #ffffff;
+            color: #000000;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+            letter-spacing: 0.02em;
+            padding: 0.9em 1.8em;
+            border-radius: 999px;
+            border: 2px solid transparent;
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hero-overlay .cta:hover {
+            background: #000000;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* ── marquee, ported from sample/index.html ── */
+        .marquee {
+            margin-top: var(--gutter);
+            background: #111111;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 84px;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            white-space: nowrap;
+            animation: marquee 60s linear infinite;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .marquee-item {
+            font-size: 38px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            padding: 0 40px;
+        }
+
+        .marquee-sep {
+            font-size: 72px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.15);
+            line-height: 1;
+            padding: 0 12px;
+            margin-top: 24px;
         }
     </style>
 </head>
@@ -147,10 +219,31 @@
             </h1>
             <div class="suffix">Design Systems Consultancy</div>
             <div class="suffix-sm">Rhythm in the System</div>
+            <a href="mailto:hello@warface.co.uk" class="cta">Get in touch</a>
         </div>
     </div>
 
-    <!-- demo content goes here, below the hero tile -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">DESIGN SYSTEMS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN ARCHITECTURE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGN GOVERNANCE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">WCAG 2.2</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">AI INTEGRATION</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGNOPS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN MIGRATION</span><span class="marquee-sep">*</span>
+            <!-- duplicate for seamless loop -->
+            <span class="marquee-item">DESIGN SYSTEMS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN ARCHITECTURE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGN GOVERNANCE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">WCAG 2.2</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">AI INTEGRATION</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGNOPS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN MIGRATION</span><span class="marquee-sep">*</span>
+        </div>
+    </div>
+
+    <!-- more demo content goes here -->
 
     <script>
         (function () {
