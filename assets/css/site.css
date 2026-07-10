@@ -114,7 +114,7 @@ body {
 }
 
 .hero-overlay .suffix {
-    font-size: clamp(2.2rem, 2.2vw, 4.5rem);
+    font-size: clamp(2rem, 2.2vw, 4.5rem);
     font-variation-settings: 'wght' 300, 'wdth' 75, 'opsz' 12;
     letter-spacing: 6px;
     margin-top: 0.15em;
@@ -128,8 +128,7 @@ body {
 .hero-overlay .suffix-sm {
     font-family: 'Tusker Grotesk 3', sans-serif;
     font-size: clamp(1.1rem, 1.6vw, 3.2rem);
-    font-weight: 500;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.3em;
     word-spacing: 0.4em;
     text-transform: uppercase;
     user-select: none;
@@ -192,7 +191,7 @@ body {
     font-weight: 800;
     color: #ffffff;
     line-height: 1;
-    padding: 0 40px;
+    padding: 0 clamp(20px, 8vw, 40px);
 }
 
 .marquee-sep {
@@ -295,7 +294,10 @@ body {
     color: #ffffff;
     line-height: 1.25;
     margin-top: 1rem;
-    width: 80%;
+    width: 90%;
+}
+@media (min-width: 768px) {
+    .what-we-do p { width: 80%; }
 }
 
 .specialisms-tags {
