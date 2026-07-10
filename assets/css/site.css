@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'SFMono';
-    src: url('/Users/robcleaton/Library/Fonts/SF-Mono-Semibold.otf') format('opentype');
+    src: url('/assets/fonts/SF-Mono-Semibold.otf') format('opentype');
     font-weight: 600;
 }
 @font-face {
     font-family: 'Tusker Grotesk';
-    src: url('/Users/robcleaton/Library/Fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
+    src: url('/assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
@@ -362,4 +362,25 @@ body {
     color: rgba(0,0,0,0.45);
     margin-top: 0.4rem;
     line-height: 1.6;
+}
+
+/* ── footer ── */
+.site-footer {
+    padding-bottom: 0.8rem;
+    text-align: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.44);
+    text-align: left;
+}
+
+.site-footer a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: rgba(255, 255, 255, 0.75);
 }
