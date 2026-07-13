@@ -24,6 +24,81 @@
         body { font-family: 'Bricolage Grotesque', sans-serif; background-color: #0B0B0B; }
         .font-body { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
 
+        @font-face {
+            font-family: 'SFMono';
+            src: url('/assets/fonts/SF-Mono-Semibold.otf') format('opentype');
+            font-weight: 600;
+        }
+
+        .hero-tile {
+            position: relative;
+            width: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #000000;
+        }
+        .backbeat-tile {
+            height: 24vh;
+        }
+
+        .field, .field-glow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            font-family: 'SFMono', ui-monospace, Menlo, monospace;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1;
+            letter-spacing: 0;
+            white-space: pre;
+            user-select: none;
+            overflow: hidden;
+        }
+        .field { color: rgba(255,255,255,0.4); }
+        .field-glow {
+            color: #ffffff;
+            pointer-events: none;
+            opacity: 0;
+            -webkit-mask-image: radial-gradient(circle var(--glow-radius, 120px) at var(--mx, -9999px) var(--my, -9999px), black 0%, transparent 100%);
+            mask-image: radial-gradient(circle var(--glow-radius, 120px) at var(--mx, -9999px) var(--my, -9999px), black 0%, transparent 100%);
+        }
+        .probe {
+            position: absolute;
+            visibility: hidden;
+            white-space: pre;
+            font-family: 'SFMono', ui-monospace, Menlo, monospace;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .backbeat-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .backbeat-mark {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2.6rem, 10.5vw, 6.5rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            text-align: center;
+            color: #ffffff;
+            user-select: none;
+        }
+        @keyframes letter-wave {
+            0%, 100% { font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96; }
+            50%       { font-variation-settings: 'wght' 200, 'wdth' 75,  'opsz' 12; }
+        }
+        .letter-anim {
+            display: inline-block;
+            animation: letter-wave 6s ease-in-out infinite;
+        }
+
         .halftone-tile {
             position: relative;
             width: 100%;
@@ -50,11 +125,18 @@
 </head>
 <body class="min-h-screen text-white">
 
-    <nav class="px-3 md:px-6 py-5 flex items-center justify-between">
-        <a href="/" class="text-white font-extrabold text-2xl tracking-tight leading-none">
-            Backbeat<span class="text-white/35 font-light">.systems</span>
-        </a>
-    </nav>
+    <div class="px-3 md:px-6 pt-3 md:pt-4 pb-3 md:pb-4">
+        <div class="hero-tile backbeat-tile">
+            <pre class="field"></pre>
+            <pre class="field-glow"></pre>
+            <span class="probe">0</span>
+            <div class="backbeat-overlay">
+                <h1 class="backbeat-mark">
+                    <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span>
+                </h1>
+            </div>
+        </div>
+    </div>
 
     <div class="px-3 md:px-6 pb-5">
         <div class="halftone-tile" id="halftone-tile" style="cursor: pointer;">
@@ -202,6 +284,8 @@
         video.play().catch(() => {});
         requestAnimationFrame(renderFrame);
     </script>
+
+    <script src="/assets/js/field-animation.js"></script>
 
 </body>
 </html>
