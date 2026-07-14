@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASCII | Backbeat</title>
+    <title>Backbeat.systems – Design systems consultancy</title>
     <meta name="google-site-verification" content="dt83dwPy2H1I4QQd49_-VSn3PJOR8wYIVwQW7YBA-Gw" />
 
     <!-- Google tag (gtag.js) -->
@@ -40,6 +40,7 @@
             inset: 0;
             z-index: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             pointer-events: none;
@@ -52,6 +53,30 @@
             text-align: center;
             color: #ffffff;
             user-select: none;
+        }
+        .backbeat-overlay .suffix {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2rem, 2.2vw, 4.5rem);
+            font-variation-settings: 'wght' 300, 'wdth' 75, 'opsz' 12;
+            letter-spacing: 6px;
+            margin-top: 0.15em;
+            text-transform: uppercase;
+            user-select: none;
+            text-align: center;
+            line-height: 90%;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .backbeat-overlay .suffix-sm {
+            font-family: 'Tusker Grotesk 3', sans-serif;
+            font-size: clamp(1.1rem, 1.6vw, 3.2rem);
+            letter-spacing: 0.3em;
+            word-spacing: 0.4em;
+            text-transform: uppercase;
+            user-select: none;
+            text-align: center;
+            max-width: 80%;
+            color: #ffffff;
         }
         @keyframes letter-wave {
             0%, 100% { font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96; }
@@ -117,6 +142,8 @@
                 <h1 class="backbeat-mark">
                     <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span>
                 </h1>
+                <div class="suffix">Design Systems Consultancy</div>
+                <div class="suffix-sm">Rhythm in the System</div>
             </div>
 
             <!-- Center play indicator (shows when paused) -->

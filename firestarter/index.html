@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backbeat.systems – Design systems consultancy</title>
+    <meta name="google-site-verification" content="dt83dwPy2H1I4QQd49_-VSn3PJOR8wYIVwQW7YBA-Gw" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8J78SBWR9L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8J78SBWR9L');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Bricolage Grotesque', sans-serif; background-color: #0B0B0B; }
+        .font-body { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+
+        :root { --gutter: 12px; }
+        @media (min-width: 768px) {
+            :root { --gutter: 16px; }
+        }
+
+        @font-face {
+            font-family: 'SFMono';
+            src: url('/assets/fonts/SF-Mono-Semibold.otf') format('opentype');
+            font-weight: 600;
+        }
+
+        .backbeat-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .backbeat-mark {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(3.9rem, 15.75vw, 9.75rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            text-align: center;
+            color: #ffffff;
+            user-select: none;
+        }
+        .backbeat-overlay .suffix {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(2rem, 2.2vw, 4.5rem);
+            font-variation-settings: 'wght' 300, 'wdth' 75, 'opsz' 12;
+            letter-spacing: 6px;
+            margin-top: 0.15em;
+            text-transform: uppercase;
+            user-select: none;
+            text-align: center;
+            line-height: 90%;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .backbeat-overlay .suffix-sm {
+            font-family: 'Tusker Grotesk 3', sans-serif;
+            font-size: clamp(1.1rem, 1.6vw, 3.2rem);
+            letter-spacing: 0.3em;
+            word-spacing: 0.4em;
+            text-transform: uppercase;
+            user-select: none;
+            text-align: center;
+            max-width: 80%;
+            color: #ffffff;
+        }
+        @keyframes letter-wave {
+            0%, 100% { font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96; }
+            50%       { font-variation-settings: 'wght' 200, 'wdth' 75,  'opsz' 12; }
+        }
+        .letter-anim {
+            display: inline-block;
+            animation: letter-wave 6s ease-in-out infinite;
+        }
+
+        .ascii-tile {
+            position: relative;
+            width: 100%;
+            height: calc(100svh - (var(--gutter) * 2));
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #000000;
+        }
+        #source-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+        .ascii-video {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            display: block;
+            margin: 0;
+            font-family: 'SFMono', ui-monospace, Menlo, monospace;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1;
+            letter-spacing: 0;
+            white-space: pre;
+            user-select: none;
+            overflow: hidden;
+            color: #ffffff;
+        }
+        .ascii-probe {
+            position: absolute;
+            visibility: hidden;
+            white-space: pre;
+            font-family: 'SFMono', ui-monospace, Menlo, monospace;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+
+    <div class="px-3 md:px-6 pt-3 md:pt-4 pb-5">
+        <div class="ascii-tile" id="ascii-tile" style="cursor: pointer;">
+            <video id="source-video" src="firestarter.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <pre class="ascii-video" id="ascii-video"></pre>
+            <span class="ascii-probe" id="ascii-probe">0</span>
+
+            <div class="backbeat-overlay">
+                <h1 class="backbeat-mark">
+                    <span class="letter-anim" style="animation-delay:0s">B</span><span class="letter-anim" style="animation-delay:-0.75s">A</span><span class="letter-anim" style="animation-delay:-1.5s">C</span><span class="letter-anim" style="animation-delay:-2.25s">K</span><span class="letter-anim" style="animation-delay:-3s">B</span><span class="letter-anim" style="animation-delay:-3.75s">E</span><span class="letter-anim" style="animation-delay:-4.5s">A</span><span class="letter-anim" style="animation-delay:-5.25s">T</span>
+                </h1>
+                <div class="suffix">Design Systems Consultancy</div>
+                <div class="suffix-sm">Rhythm in the System</div>
+            </div>
+
+            <!-- Center play indicator (shows when paused) -->
+            <div id="play-indicator" class="absolute inset-0 flex items-center justify-center pointer-events-none" style="display:none; z-index:1;">
+                <div class="bg-black/40 backdrop-blur-sm rounded-full p-5">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Mute toggle -->
+            <button id="mute-btn" type="button" aria-label="Unmute"
+                    class="absolute bottom-5 right-5 text-white/80 hover:text-white transition-colors"
+                    style="background:none;border:none;cursor:pointer;padding:0;line-height:1;z-index:1;">
+                <div class="bg-black/40 backdrop-blur-sm rounded-full p-2.5">
+                    <svg id="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.63 3.63a1 1 0 0 0 0 1.41L7.29 8.7 7 9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3l4 4a1 1 0 0 0 1.65-.76v-3.58l4.18 4.18a7 7 0 0 1-2.41 1.19 1 1 0 1 0 .52 1.93 9 9 0 0 0 3.32-1.67l1.34 1.34a1 1 0 1 0 1.41-1.41L5.05 3.63a1 1 0 0 0-1.42 0zM12 5.17v3.29l-2.32-2.32L12 5.17zM19 12a7 7 0 0 1-.63 2.9l1.46 1.46A9 9 0 0 0 21 12a9 9 0 0 0-6.54-8.65 1 1 0 0 0-.52 1.93A7 7 0 0 1 19 12zm-7 7-1.17-.66L9 16.5V15l-1-1H4v-4h2.5l-2-2H4a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3h3l4 4a1 1 0 0 0 1.65-.76V18.3L12 19zM15.5 12a3.5 3.5 0 0 1-1.8 3.07l1.43 1.43A5.5 5.5 0 0 0 17.5 12a5.5 5.5 0 0 0-3.07-4.93 1 1 0 1 0-.86 1.8A3.5 3.5 0 0 1 15.5 12z"/>
+                    </svg>
+                    <svg id="icon-sound" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('source-video');
+        const asciiEl = document.getElementById('ascii-video');
+        const probe = document.getElementById('ascii-probe');
+
+        const tile = document.getElementById('ascii-tile');
+        const playIndicator = document.getElementById('play-indicator');
+        const muteBtn = document.getElementById('mute-btn');
+        const iconMuted = document.getElementById('icon-muted');
+        const iconSound = document.getElementById('icon-sound');
+
+        let hasInteracted = false;
+        function firstUnmute() {
+            if (hasInteracted) return;
+            hasInteracted = true;
+            video.muted = false;
+            video.volume = 0.8;
+            iconMuted.style.display = 'none';
+            iconSound.style.display = 'block';
+            muteBtn.setAttribute('aria-label', 'Mute');
+        }
+
+        tile.addEventListener('click', (e) => {
+            if (e.target.closest('#mute-btn')) return;
+            firstUnmute();
+            if (video.paused) {
+                video.play();
+                playIndicator.style.display = 'none';
+            } else {
+                video.pause();
+                playIndicator.style.display = 'flex';
+            }
+        });
+
+        muteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.muted || video.volume === 0) {
+                video.muted = false;
+                video.volume = 0.8;
+                iconMuted.style.display = 'none';
+                iconSound.style.display = 'block';
+                muteBtn.setAttribute('aria-label', 'Mute');
+            } else {
+                video.muted = true;
+                iconMuted.style.display = 'block';
+                iconSound.style.display = 'none';
+                muteBtn.setAttribute('aria-label', 'Unmute');
+            }
+        });
+
+        // Same brightness ramp used by the ascii field effect elsewhere on the site.
+        const RAMP = ' .:-=+*#%@';
+
+        let cols = 0, rows = 0, charW = 8, charH = 13;
+
+        const sample = document.createElement('canvas');
+        const sampleCtx = sample.getContext('2d', { willReadFrequently: true });
+
+        function measureChar() {
+            const r = probe.getBoundingClientRect();
+            return { w: r.width, h: r.height || 13 };
+        }
+
+        function resize() {
+            const char = measureChar();
+            charW = char.w;
+            charH = char.h;
+            const rect = tile.getBoundingClientRect();
+            cols = Math.max(1, Math.ceil(rect.width / charW));
+            rows = Math.max(1, Math.ceil(rect.height / charH));
+            sample.width = cols;
+            sample.height = rows;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function renderFrame() {
+            requestAnimationFrame(renderFrame);
+            if (video.readyState < 2 || !cols || !video.videoWidth) return;
+
+            // Crop the source frame to the grid's actual pixel aspect ratio
+            // (cols*charW / rows*charH), like CSS object-fit: cover, centered.
+            const gridAspect = (cols * charW) / (rows * charH);
+            const videoAspect = video.videoWidth / video.videoHeight;
+            let sx, sy, sWidth, sHeight;
+            if (videoAspect > gridAspect) {
+                sHeight = video.videoHeight;
+                sWidth = sHeight * gridAspect;
+                sx = (video.videoWidth - sWidth) / 2;
+                sy = 0;
+            } else {
+                sWidth = video.videoWidth;
+                sHeight = sWidth / gridAspect;
+                sx = 0;
+                sy = (video.videoHeight - sHeight) / 2;
+            }
+
+            sampleCtx.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, cols, rows);
+            const { data } = sampleCtx.getImageData(0, 0, cols, rows);
+
+            const lines = new Array(rows);
+            for (let y = 0; y < rows; y++) {
+                let line = '';
+                for (let x = 0; x < cols; x++) {
+                    const i = (y * cols + x) * 4;
+                    const lum = (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]) / 255;
+                    line += RAMP[Math.min(RAMP.length - 1, Math.floor(lum * RAMP.length))];
+                }
+                lines[y] = line;
+            }
+            asciiEl.textContent = lines.join('\n');
+        }
+
+        video.play().catch(() => {});
+        requestAnimationFrame(renderFrame);
+    </script>
+
+</body>
+</html>
