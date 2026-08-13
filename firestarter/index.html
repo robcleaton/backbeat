@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
     <style>
         * { -webkit-font-smoothing: antialiased; }
         body { font-family: 'Bricolage Grotesque', sans-serif; background-color: #ff3c3c; }
@@ -128,11 +129,31 @@
             font-size: 13px;
             line-height: 1;
         }
+
+        .marquee,
+        .demo-card.what-we-do,
+        .demo-card.specialisms,
+        .hero-tile,
+        .process-card {
+            background: #f12f2f;
+        }
+        .process-card .eyebrow {
+            color: rgba(255,255,255,0.4);
+        }
+        .process-steps .num {
+            color: rgba(255,255,255,0.2);
+        }
+        .process-steps h3 {
+            color: #ffffff;
+        }
+        .process-steps p {
+            color: rgba(255,255,255,0.75);
+        }
     </style>
 </head>
 <body class="min-h-screen text-white">
 
-    <div class="px-3 md:px-6 pt-3 md:pt-4 pb-5">
+    <div>
         <div class="ascii-tile" id="ascii-tile" style="cursor: pointer;">
             <video id="source-video" src="firestarter.mp4" autoplay muted loop playsinline preload="auto"></video>
             <pre class="ascii-video" id="ascii-video"></pre>
@@ -170,6 +191,93 @@
             </button>
         </div>
     </div>
+
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">DESIGN SYSTEMS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN ARCHITECTURE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGN GOVERNANCE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">WCAG 2.2</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">AI INTEGRATION</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGNOPS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN MIGRATION</span><span class="marquee-sep">*</span>
+            <!-- duplicate for seamless loop -->
+            <span class="marquee-item">DESIGN SYSTEMS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN ARCHITECTURE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGN GOVERNANCE</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">WCAG 2.2</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">AI INTEGRATION</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">DESIGNOPS</span><span class="marquee-sep">*</span>
+            <span class="marquee-item">TOKEN MIGRATION</span><span class="marquee-sep">*</span>
+        </div>
+    </div>
+
+    <div class="bento-section">
+        <div class="demo-grid">
+            <div class="demo-card what-we-do">
+                <span class="eyebrow">What we do</span>
+                <p>Backbeat partners with your team, consulting on design systems built for AI-readiness, accessibility, and adoption.</p>
+            </div>
+            <div class="demo-card specialisms">
+                <span class="eyebrow">Our specialisms</span>
+                <div class="specialisms-tags">
+                    <span>Agentic Workflows</span>
+                    <span>AI Agents</span>
+                    <span>Document automation</span>
+                    <span>MCP Integrations</span>
+                    <span>Token Architecture</span>
+                    <span>Token Migration</span>
+                    <span>Semantic Tokens</span>
+                    <span>Component Libraries</span>
+                    <span>Figma Systems</span>
+                    <span>Design Governance</span>
+                    <span>DesignOps</span>
+                    <span>Contribution Models</span>
+                    <span>WCAG 2.2</span>
+                    <span>EU AI Act</span>
+                    <span>Accessibility</span>
+                    <span>Design-to-Code</span>
+                    <span>Visual Regression</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-card">
+            <span class="eyebrow">How we work</span>
+            <div class="process-steps">
+                <div>
+                    <div class="num">1</div>
+                    <h3>Audit &amp; discover</h3>
+                    <p>We map your current state — components, token sprawl, team workflows, and platform targets.</p>
+                </div>
+                <div>
+                    <div class="num">2</div>
+                    <h3>Architect &amp; build</h3>
+                    <p>Tokens, components, and documentation that teams actually adopt — with WCAG 2.2 compliance and governance built in from day one.</p>
+                </div>
+                <div>
+                    <div class="num">3</div>
+                    <h3>Scale &amp; sustain</h3>
+                    <p>Governance frameworks, contribution models, and hands-on training so your team owns it long after we're gone.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-tile ambient-tile">
+            <pre class="field"></pre>
+            <pre class="field-glow"></pre>
+            <span class="probe">0</span>
+
+            <div class="panel-overlay">
+                <p>Does your team need help maturing your Design System?</p>
+                <button type="button" class="cta" onclick="location.href='mailto:hello@backbeat.systems'">Get in touch</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">2026 <a href="https://www.warface.co.uk/" target="_blank" rel="noopener">Warface</a></footer>
+
+    <script src="/assets/js/field-animation.js"></script>
 
     <script>
         const video = document.getElementById('source-video');
